@@ -12,9 +12,9 @@ inclusion: always
 ## Core libraries
 - Document parsing: PyMuPDF (PDF), openpyxl data_only=True (Excel), Python email stdlib (EML)
 - Vector store: ChromaDB (local persistence, no cloud setup required)
-- Embeddings: OpenAI text-embedding-3-small
+- Embeddings: Ollama nomic-embed-text (local) OR Gemini embedding-001
 - RAG orchestration: LlamaIndex (ChromaVectorStore + VectorStoreIndex)
-- LLM inference: OpenAI GPT-4o-mini
+- LLM inference: Ollama phi3:mini (local) OR Gemini 1.5 Flash
 - Google APIs: google-api-python-client + google-auth-oauthlib
 
 ## Architecture decisions

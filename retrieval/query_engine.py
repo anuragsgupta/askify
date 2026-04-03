@@ -2,7 +2,7 @@
 Query engine for SME Knowledge Agent using LlamaIndex.
 
 This module provides RAG (Retrieval-Augmented Generation) capabilities
-using ChromaDB as the vector store and OpenAI for embeddings and LLM.
+using ChromaDB as the vector store with support for Ollama and Gemini.
 """
 
 import os
@@ -12,8 +12,6 @@ from dataclasses import dataclass
 import chromadb
 from llama_index.core import VectorStoreIndex, StorageContext
 from llama_index.vector_stores.chroma import ChromaVectorStore
-from llama_index.llms.openai import OpenAI
-from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.core.schema import NodeWithScore, TextNode
 
 
@@ -27,34 +25,74 @@ class QueryResult:
 
 def create_query_engine(
     collection: chromadb.Collection,
-    llm_model: str = "gpt-4o-mini",
-    embed_model: str = "text-embedding-3-small",
+    provider: str = None,
+    llm_model: str = None,
+    embed_model: str = None,
     temperature: float = 0.0
 ):
     """
     Create LlamaIndex query engine with ChromaDB backend.
     
+    Supports Ollama (local) and Gemini providers.
+    
     Args:
         collection: ChromaDB collection containing document chunks
-        llm_model: OpenAI model name for text generation
-        embed_model: OpenAI model name for embeddings
+        provider: "ollama" or "gemini" (defaults to LLM_PROVIDER env var)
+        llm_model: Model name for text generation (provider-specific)
+        embed_model: Model name for embeddings (provider-specific)
         temperature: LLM temperature (0.0 for deterministic)
         
     Returns:
         VectorStoreIndex configured for RAG queries
     """
-    # Initialize OpenAI LLM
-    llm = OpenAI(
-        model=llm_model,
-        temperature=temperature,
-        api_key=os.getenv('OPENAI_API_KEY')
-    )
+    # Get provider from env if not specified
+    if provider is None:
+        provider = os.getenv('LLM_PROVIDER', 'ollama').lower()
     
-    # Initialize OpenAI embedding model
-    embed_model_obj = OpenAIEmbedding(
-        model=embed_model,
-        api_key=os.getenv('OPENAI_API_KEY')
-    )
+    # Initialize LLM and embedding model based on provider
+    if provider == 'ollama':
+        from llama_index.llms.ollama import Ollama
+        from llama_index.embeddings.ollama import OllamaEmbedding
+        
+        base_url = os.getenv('OLLAMA_BASE_URL', 'http://localhost:11434')
+        llm_model = llm_model or os.getenv('OLLAMA_LLM_MODEL', 'phi3:mini')
+        embed_model_name = embed_model or os.getenv('OLLAMA_EMBED_MODEL', 'nomic-embed-text:latest')
+        
+        llm = Ollama(
+            model=llm_model,
+            base_url=base_url,
+            temperature=temperature,
+            request_timeout=120.0
+        )
+        
+        embed_model_obj = OllamaEmbedding(
+            model_name=embed_model_name,
+            base_url=base_url
+        )
+        
+    elif provider == 'gemini':
+        from llama_index.llms.gemini import Gemini
+        from llama_index.embeddings.gemini import GeminiEmbedding
+        
+        api_key = os.getenv('GEMINI_API_KEY')
+        if not api_key:
+            raise ValueError("GEMINI_API_KEY not found in environment")
+        
+        llm_model = llm_model or os.getenv('GEMINI_MODEL', 'gemini-1.5-flash')
+        
+        llm = Gemini(
+            model=llm_model,
+            api_key=api_key,
+            temperature=temperature
+        )
+        
+        embed_model_obj = GeminiEmbedding(
+            model_name="models/embedding-001",
+            api_key=api_key
+        )
+        
+    else:
+        raise ValueError(f"Unsupported provider: {provider}. Use 'ollama' or 'gemini'")
     
     # Create ChromaDB vector store
     vector_store = ChromaVectorStore(chroma_collection=collection)
