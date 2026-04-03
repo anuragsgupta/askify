@@ -104,27 +104,27 @@ This implementation plan breaks down the SME Knowledge Agent into discrete codin
   - Verify parsers handle edge cases gracefully
   - Ask the user if questions arise
 
-- [~] 6. Implement ChromaDB storage layer
-  - [~] 6.1 Create `storage/chroma_store.py` with `init_chroma_collection()` function
+- [x] 6. Implement ChromaDB storage layer
+  - [x] 6.1 Create `storage/chroma_store.py` with `init_chroma_collection()` function
     - Initialize ChromaDB client with local persistence to `./chroma_db`
     - Create single collection for all doc types
     - Configure collection with OpenAI embedding function
     - _Requirements: 4.1_
   
-  - [~] 6.2 Implement `upsert_chunks()` function
+  - [x] 6.2 Implement `upsert_chunks()` function
     - Accept chunks with content, metadata, and pre-computed embeddings
     - Upsert to ChromaDB collection with full metadata schema
     - Handle duplicate IDs gracefully (update existing)
     - _Requirements: 1.2, 2.2, 3.3, 4.1_
   
-  - [~] 6.3 Write property test for metadata preservation
+  - [x] 6.3 Write property test for metadata preservation
     - **Property 2: Metadata preservation across storage**
     - **Validates: Requirements 1.2, 2.2, 3.3**
     - Generate random chunks with complete metadata
     - Store in ChromaDB and retrieve
     - Verify all metadata fields preserved without loss
   
-  - [~] 6.4 Write unit tests for ChromaDB operations
+  - [x] 6.4 Write unit tests for ChromaDB operations
     - Test upsert with duplicate IDs
     - Test upsert with missing metadata fields
     - Test collection initialization with existing data
