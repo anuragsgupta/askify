@@ -3,6 +3,10 @@
 # Environment variables (sensitive data)
 .env
 
+# Google OAuth credentials (NEVER commit these)
+credentials.json
+token.json
+
 # Python
 __pycache__/
 *.py[cod]

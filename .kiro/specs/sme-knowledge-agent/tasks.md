@@ -130,15 +130,15 @@ This implementation plan breaks down the SME Knowledge Agent into discrete codin
     - Test collection initialization with existing data
     - _Requirements: 4.1_
 
-- [ ] 7. Implement Google Drive fetcher (optional enhancement)
-  - [ ] 7.1 Create `ingestion/drive_fetcher.py` with `download_drive_folder()` function
+- [x] 7. Implement Google Drive fetcher (optional enhancement)
+  - [x] 7.1 Create `ingestion/drive_fetcher.py` with `download_drive_folder()` function
     - Authenticate using OAuth 2.0 with google-auth-oauthlib
     - List all files in specified Drive folder
     - Download PDFs and export Google Sheets as .xlsx
     - Return list of local file paths
     - _Requirements: 9.1, 9.2_
   
-  - [ ] 7.2 Write unit tests for Drive API integration
+  - [x] 7.2 Write unit tests for Drive API integration
     - Test folder listing with real Drive folder (integration test)
     - Test OAuth flow and error handling
     - Test fallback to manual upload on timeout
@@ -157,209 +157,209 @@ This implementation plan breaks down the SME Knowledge Agent into discrete codin
     - Test authentication error handling
     - _Requirements: 3.2, 9.2, 9.3_
 
-- [~] 9. Checkpoint - Ensure storage layer tests pass
+- [ ] 9. Checkpoint - Ensure storage layer tests pass
   - Run all storage and API integration tests
   - Verify ChromaDB persistence works across restarts
   - Ask the user if questions arise
 
-- [~] 10. Implement query engine with LlamaIndex
-  - [~] 10.1 Create `retrieval/query_engine.py` with `create_query_engine()` function
+- [ ] 10. Implement query engine with LlamaIndex
+  - [ ] 10.1 Create `retrieval/query_engine.py` with `create_query_engine()` function
     - Initialize OpenAI GPT-4o-mini LLM
     - Initialize OpenAI text-embedding-3-small embedding model
     - Create ChromaVectorStore from ChromaDB collection
     - Create VectorStoreIndex with LlamaIndex
     - _Requirements: 4.1_
   
-  - [~] 10.2 Implement `query_with_metadata()` function
+  - [ ] 10.2 Implement `query_with_metadata()` function
     - Execute vector similarity search with top_k=5
     - Apply optional doc_type filter to restrict results
     - Return QueryResult with answer and source chunks with full metadata
     - _Requirements: 4.1, 4.2, 4.3_
   
-  - [~] 10.3 Write property test for multi-doc-type retrieval
+  - [ ] 10.3 Write property test for multi-doc-type retrieval
     - **Property 8: Multi-doc-type retrieval**
     - **Validates: Requirements 4.1**
     - Generate queries against mixed doc types
     - Verify retrieval can return chunks from all types
   
-  - [~] 10.4 Write property test for retrieval metadata preservation
+  - [ ] 10.4 Write property test for retrieval metadata preservation
     - **Property 9: Retrieval metadata preservation**
     - **Validates: Requirements 4.2**
     - Generate random chunks and store in ChromaDB
     - Retrieve and verify complete metadata is preserved
   
-  - [~] 10.5 Write property test for doc type filtering accuracy
+  - [ ] 10.5 Write property test for doc type filtering accuracy
     - **Property 10: Doc type filtering accuracy**
     - **Validates: Requirements 4.3**
     - Generate queries with doc_type filters
     - Verify all returned chunks match specified filter
   
-  - [~] 10.6 Write unit tests for query engine
+  - [ ] 10.6 Write unit tests for query engine
     - Test specific queries with known expected results
     - Test empty results handling
     - Test OpenAI API error handling and retries
     - _Requirements: 4.1, 4.2, 4.3_
 
-- [~] 11. Implement conflict detection middleware
-  - [~] 11.1 Create `retrieval/conflict_detector.py` with `detect_conflicts()` function
+- [ ] 11. Implement conflict detection middleware
+  - [ ] 11.1 Create `retrieval/conflict_detector.py` with `detect_conflicts()` function
     - Analyze retrieved chunks for same section_title or client field
     - Check for different doc_dates and semantically different content
     - Use semantic similarity threshold < 0.9 to identify conflicts
     - Return list of Conflict objects
     - _Requirements: 6.1_
   
-  - [~] 11.2 Implement `apply_date_priority_rule()` function
+  - [ ] 11.2 Implement `apply_date_priority_rule()` function
     - Select chunk with most recent doc_date as winner
     - Return winner and list of rejected chunks
     - _Requirements: 6.2_
   
-  - [~] 11.3 Implement `generate_diff_explanation()` function
+  - [ ] 11.3 Implement `generate_diff_explanation()` function
     - Compare winner and rejected chunk content
     - Generate plain-language description of changes
     - Example: "Refund window changed from 30 to 60 days"
     - _Requirements: 6.3_
   
-  - [~] 11.4 Implement `flag_outdated_email()` function
+  - [ ] 11.4 Implement `flag_outdated_email()` function
     - Check if email chunk predates PDF chunk on same topic
     - Match topics using section_title or client field
     - Return True if email contains outdated advice
     - _Requirements: 6.4_
   
-  - [~] 11.5 Write property test for conflict detection and resolution
+  - [ ] 11.5 Write property test for conflict detection and resolution
     - **Property 11: Conflict detection and date-priority resolution**
     - **Validates: Requirements 6.1, 6.2**
     - Generate pairs of chunks with varying attributes
     - Verify conflicts are detected and most recent wins
   
-  - [~] 11.6 Write property test for diff explanation generation
+  - [ ] 11.6 Write property test for diff explanation generation
     - **Property 12: Diff explanation generation**
     - **Validates: Requirements 6.3**
     - Generate detected conflicts
     - Verify non-empty diff explanation is generated
   
-  - [~] 11.7 Write property test for cross-doc-type outdated flagging
+  - [ ] 11.7 Write property test for cross-doc-type outdated flagging
     - **Property 13: Cross-doc-type outdated flagging**
     - **Validates: Requirements 6.4**
     - Generate email/PDF pairs with varying dates
     - Verify outdated flagging logic is correct
   
-  - [~] 11.8 Write unit tests for conflict detector
+  - [ ] 11.8 Write unit tests for conflict detector
     - Test specific conflict scenarios (version updates, policy changes)
     - Test edge cases (same date, missing metadata)
     - Test diff generation quality
     - _Requirements: 6.1, 6.2, 6.3, 6.4_
 
-- [~] 12. Checkpoint - Ensure retrieval layer tests pass
+- [ ] 12. Checkpoint - Ensure retrieval layer tests pass
   - Run all query engine and conflict detector tests
   - Verify end-to-end query flow works correctly
   - Ask the user if questions arise
 
-- [~] 13. Implement Streamlit authentication and role-based routing
-  - [~] 13.1 Create `app.py` with authentication setup
+- [ ] 13. Implement Streamlit authentication and role-based routing
+  - [ ] 13.1 Create `app.py` with authentication setup
     - Install streamlit-authenticator
     - Create `config.yaml` with sample users and roles (employee, team_lead, knowledge_manager, system_admin)
     - Implement login page with role-based session state
     - _Requirements: All (foundation for UI)_
   
-  - [~] 13.2 Implement role-based dashboard routing
+  - [ ] 13.2 Implement role-based dashboard routing
     - Check `st.session_state['role']` after authentication
     - Route to appropriate dashboard based on role
     - _Requirements: All (foundation for UI)_
   
-  - [~] 13.3 Write unit tests for authentication
+  - [ ] 13.3 Write unit tests for authentication
     - Test login with valid/invalid credentials
     - Test role assignment and session state
     - Test default role fallback
     - _Requirements: All_
 
-- [~] 14. Implement employee query interface
-  - [~] 14.1 Create `render_query_interface()` function in `app.py`
+- [ ] 14. Implement employee query interface
+  - [ ] 14.1 Create `render_query_interface()` function in `app.py`
     - Display text input for natural language query
     - Call query engine on submission
     - Display AI-generated answer
     - _Requirements: 4.1, 5.1, 5.2, 5.3_
   
-  - [~] 14.2 Implement `render_citation()` function
+  - [ ] 14.2 Implement `render_citation()` function
     - Format citations based on doc_type
     - PDF: "Refund Policy v2 (Section 3.2: Returns, Page 5)"
     - Excel: "Pricing_2024.xlsx (Sheet: Q1, Row 42)"
     - Email: "From: john@acme.com (2024-01-15, Subject: Discount approval)"
     - _Requirements: 5.1, 5.2, 5.3_
   
-  - [~] 14.3 Write property test for citation formatting completeness
+  - [ ] 14.3 Write property test for citation formatting completeness
     - **Property 7: Citation formatting completeness**
     - **Validates: Requirements 5.1, 5.2, 5.3**
     - Generate random chunks with metadata
     - Verify citation includes all required fields for doc_type
   
-  - [~] 14.4 Write unit tests for query interface
+  - [ ] 14.4 Write unit tests for query interface
     - Test query submission and answer display
     - Test citation formatting for each doc_type
     - Test empty results handling
     - _Requirements: 4.1, 5.1, 5.2, 5.3_
 
-- [~] 15. Implement conflict warning UI
-  - [~] 15.1 Create `render_conflict_warning()` function in `app.py`
+- [ ] 15. Implement conflict warning UI
+  - [ ] 15.1 Create `render_conflict_warning()` function in `app.py`
     - Display red warning banner when conflicts detected
     - Show "View side-by-side" button
     - _Requirements: 7.1_
   
-  - [~] 15.2 Implement side-by-side conflict view
+  - [ ] 15.2 Implement side-by-side conflict view
     - Display winner and rejected chunks
     - Highlight differences in content
     - Show diff explanation
     - _Requirements: 7.2_
   
-  - [~] 15.3 Ensure no conflict UI when no conflicts exist
+  - [ ] 15.3 Ensure no conflict UI when no conflicts exist
     - Hide warning banner and side-by-side view
     - _Requirements: 7.3_
   
-  - [~] 15.4 Write unit tests for conflict UI
+  - [ ] 15.4 Write unit tests for conflict UI
     - Test warning banner visibility
     - Test side-by-side view rendering
     - Test UI hiding when no conflicts
     - _Requirements: 7.1, 7.2, 7.3_
 
-- [~] 16. Implement CRM ticket creation
-  - [~] 16.1 Create `render_ticket_creation()` function in `app.py`
+- [ ] 16. Implement CRM ticket creation
+  - [ ] 16.1 Create `render_ticket_creation()` function in `app.py`
     - Display "Create Ticket" button after query
     - Pre-populate form with: client_name, query_text, ai_answer, source_citations, conflict_flag
     - Extract client_name from Excel metadata if available
     - Include resolution reasoning if conflict was resolved
     - _Requirements: 8.1, 8.2_
   
-  - [~] 16.2 Write property test for ticket field population
+  - [ ] 16.2 Write property test for ticket field population
     - **Property 14: Ticket field population**
     - **Validates: Requirements 8.1, 8.2**
     - Generate random query contexts
     - Verify all required fields are populated correctly
   
-  - [~] 16.3 Write unit tests for ticket creation
+  - [ ] 16.3 Write unit tests for ticket creation
     - Test ticket pre-population with query context
     - Test conflict_flag setting
     - Test missing client_name handling
     - _Requirements: 8.1, 8.2_
 
-- [~] 17. Implement knowledge manager ingestion dashboard
-  - [~] 17.1 Create `render_document_upload()` function in `app.py`
+- [ ] 17. Implement knowledge manager ingestion dashboard
+  - [ ] 17.1 Create `render_document_upload()` function in `app.py`
     - Display file uploader for PDF, Excel, EML files
     - Call appropriate parser on upload
     - Generate embeddings using OpenAI
     - Store chunks in ChromaDB
     - _Requirements: 1.1, 2.1, 3.1, 9.1_
   
-  - [~] 17.2 Create `render_ingestion_dashboard()` function
+  - [ ] 17.2 Create `render_ingestion_dashboard()` function
     - Display summary statistics: total_documents, total_sections, total_excel_rows, total_email_messages
     - Allow clicking on document to preview extracted sections/rows
     - _Requirements: 10.1, 10.2_
   
-  - [~] 17.3 Write property test for ingestion summary accuracy
+  - [ ] 17.3 Write property test for ingestion summary accuracy
     - **Property 15: Ingestion summary accuracy**
     - **Validates: Requirements 10.1**
     - Generate ingestion runs with known quantities
     - Verify summary statistics are accurate
   
-  - [~] 17.4 Write unit tests for ingestion dashboard
+  - [ ] 17.4 Write unit tests for ingestion dashboard
     - Test file upload and processing
     - Test summary statistics calculation
     - Test document preview display
@@ -378,58 +378,58 @@ This implementation plan breaks down the SME Knowledge Agent into discrete codin
     - Test resolution reasoning display
     - _Requirements: 7.1, 7.2_
 
-- [~] 19. Checkpoint - Ensure UI tests pass
+- [ ] 19. Checkpoint - Ensure UI tests pass
   - Run all Streamlit UI tests
   - Manually test role-based dashboard rendering
   - Verify conflict warning and ticket creation work correctly
   - Ask the user if questions arise
 
-- [~] 20. Create demo data and pre-generate embeddings
-  - [~] 20.1 Create sample documents in `data/` directory
+- [ ] 20. Create demo data and pre-generate embeddings
+  - [ ] 20.1 Create sample documents in `data/` directory
     - Add 2-3 policy PDFs with version conflicts (e.g., Refund_Policy_v1_2023.pdf, Refund_Policy_v2_2024.pdf)
     - Add 1-2 pricing Excel files with client data
     - Add 2-3 EML files with email threads
     - _Requirements: All (demo preparation)_
   
-  - [~] 20.2 Run ingestion pipeline on demo data
+  - [ ] 20.2 Run ingestion pipeline on demo data
     - Parse all demo documents
     - Generate embeddings using OpenAI
     - Store in ChromaDB with persistence to `./chroma_db`
     - Commit `chroma_db/` directory to repository
     - _Requirements: All (demo preparation)_
   
-  - [~] 20.3 Verify demo queries work correctly
+  - [ ] 20.3 Verify demo queries work correctly
     - Test query that triggers conflict detection
     - Test query that retrieves from multiple doc types
     - Test citation formatting for all doc types
     - _Requirements: All (demo preparation)_
 
-- [~] 21. Integration testing and polish
-  - [~] 21.1 Write end-to-end integration tests
+- [ ] 21. Integration testing and polish
+  - [ ] 21.1 Write end-to-end integration tests
     - Test complete flow: ingestion → query → conflict detection → answer
     - Test Google Drive/Gmail API integration (if implemented)
     - Test ChromaDB persistence across application restarts
     - _Requirements: All_
   
-  - [~] 21.2 Performance testing
+  - [ ] 21.2 Performance testing
     - Measure query response time (target: < 3 seconds)
     - Test with varying collection sizes (100, 1000, 10000 chunks)
     - Optimize if necessary
     - _Requirements: All_
   
-  - [~] 21.3 Error handling and logging
+  - [ ] 21.3 Error handling and logging
     - Add comprehensive error handling for all API calls
     - Add logging for debugging and monitoring
     - Test error scenarios (API failures, malformed files, etc.)
     - _Requirements: All_
   
-  - [~] 21.4 Documentation and README
+  - [ ] 21.4 Documentation and README
     - Update README.md with setup instructions
     - Document environment variables in .env.example
     - Add usage examples and screenshots
     - _Requirements: All_
 
-- [~] 22. Final checkpoint - Ensure all tests pass
+- [ ] 22. Final checkpoint - Ensure all tests pass
   - Run full test suite (unit tests, property tests, integration tests)
   - Verify demo works end-to-end
   - Ensure all requirements are covered
