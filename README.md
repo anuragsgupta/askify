@@ -15,7 +15,7 @@ A conversational AI system that ingests multi-format company documents (PDF, Exc
    ```bash
    cp .env.example .env
    ```
-## Configuration
+w## Configuration
 
 Configure your environment variables in `.env`:
 - `OPENAI_API_KEY` - Your OpenAI API key

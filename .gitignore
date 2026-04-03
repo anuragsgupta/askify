@@ -1,5 +1,4 @@
 # Kiro IDE configuration and specs (keep local only)
-.kiro/
 
 # Environment variables (sensitive data)
 .env
