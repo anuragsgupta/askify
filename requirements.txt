@@ -1,0 +1,11 @@
+PyMuPDF
+openpyxl
+chromadb
+llama-index
+openai
+streamlit
+streamlit-authenticator
+google-api-python-client
+google-auth-oauthlib
+hypothesis
+pytest
