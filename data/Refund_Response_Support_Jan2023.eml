@@ -1,0 +1,29 @@
+Content-Type: multipart/mixed; boundary="===============3986699564770240933=="
+MIME-Version: 1.0
+From: support@company.com
+To: john.smith@acmecorp.com
+Subject: Re: Question about refund policy for Acme Corp
+Date: Fri, 03 Apr 2026 18:03:43 +0530
+Message-ID: <refund-response-001@company.com>
+In-Reply-To: <refund-inquiry-001@acmecorp.com>
+References: <refund-inquiry-001@acmecorp.com>
+
+--===============3986699564770240933==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+Hi John,
+
+Thanks for reaching out! Yes, you're correct - our refund policy allows returns within 30 days of purchase.
+
+The products must be unused and in original packaging. Once we receive and approve the return, refunds are processed within 5-7 business days.
+
+For Acme Corp's recent Widget Pro purchase, you're still within the refund window. Just let us know which units you'd like to return and we'll send you a return authorization.
+
+Best regards,
+Sarah Johnson
+Customer Support Team
+support@company.com
+
+--===============3986699564770240933==--

@@ -1,0 +1,28 @@
+Content-Type: multipart/mixed; boundary="===============7352394226593449708=="
+MIME-Version: 1.0
+From: john.smith@acmecorp.com
+To: support@company.com
+Subject: Question about refund policy for Acme Corp
+Date: Fri, 03 Apr 2026 18:03:43 +0530
+Message-ID: <refund-inquiry-001@acmecorp.com>
+
+--===============7352394226593449708==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+Hi Support Team,
+
+I'm reaching out on behalf of Acme Corp regarding your refund policy. We purchased several Widget Pro units last month and may need to return some of them.
+
+Can you confirm the refund window? I believe it's 30 days from purchase, correct?
+
+Also, what's the typical processing time for refunds?
+
+Thanks,
+John Smith
+Procurement Manager
+Acme Corp
+john.smith@acmecorp.com
+
+--===============7352394226593449708==--
