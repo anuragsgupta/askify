@@ -1,0 +1,24 @@
+cookie:
+  expiry_days: 30
+  key: sme_secret_key_12345
+  name: sme_knowledge_agent
+credentials:
+  usernames:
+    admin1:
+      name: Admin User
+      password: $2b$12$yql9GkXLyKADfLdDQzHPu.HKdSWVUQGd2C0iBINqG7jTjY5fojPZK
+      role: knowledge_manager
+    employee1:
+      name: John Doe
+      password: $2b$12$JPvvXuVCSKS2YY8JIoHYseKHNtGS3rujh10oWkqq.3ZHl.oLIDXN2
+      role: employee
+    manager1:
+      name: Jane Smith
+      password: $2b$12$JyKM0/oDIo2CwHMb/IAGtePEzwfvMrLeB81G9WKuzcLark6k3baAO
+      role: team_lead
+    sysadmin:
+      name: System Admin
+      password: $2b$12$hGmim37OLQBO0gikFvrccetXFfEqSKNrRzbfrn5OfLwDlI84ulBjS
+      role: system_admin
+preauthorized:
+  emails: []
