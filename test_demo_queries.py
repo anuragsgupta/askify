@@ -44,7 +44,7 @@ def test_conflict_detection():
     conflicts = detect_conflicts(results)
     
     if conflicts:
-        print(f"\n✓ Detected {len(conflicts)} conflict(s):")
+        print(f"\n[OK] Detected {len(conflicts)} conflict(s):")
         for conflict in conflicts:
             print(f"\n  Winner: {conflict.winner['metadata'].get('source')}")
             print(f"    Date: {conflict.winner['metadata'].get('doc_date')}")
@@ -52,7 +52,7 @@ def test_conflict_detection():
             print(f"    Date: {conflict.rejected[0]['metadata'].get('doc_date')}")
             print(f"  Explanation: {conflict.diff_explanation}")
     else:
-        print("\n⚠ No conflicts detected (expected at least 1)")
+        print("\n[WARN] No conflicts detected (expected at least 1)")
     
     return len(conflicts) > 0
 
@@ -93,9 +93,9 @@ def test_multi_doc_type_retrieval():
     # Verify we got multiple doc types
     success = len(doc_types) >= 2
     if success:
-        print(f"\n✓ Successfully retrieved from multiple doc types")
+        print(f"\n[OK] Successfully retrieved from multiple doc types")
     else:
-        print(f"\n⚠ Only retrieved from {len(doc_types)} doc type(s)")
+        print(f"\n[WARN] Only retrieved from {len(doc_types)} doc type(s)")
     
     return success
 
@@ -145,11 +145,11 @@ def test_citation_formatting():
             missing = [field for field in required if not metadata.get(field)]
             
             if missing:
-                print(f"  ⚠ Missing fields: {', '.join(missing)}")
+                print(f"  [WARN] Missing fields: {', '.join(missing)}")
             else:
-                print(f"  ✓ All required fields present")
+                print(f"  [OK] All required fields present")
         else:
-            print(f"  ⚠ No chunks found for {doc_type}")
+            print(f"  [WARN] No chunks found for {doc_type}")
     
     return True
 
@@ -162,7 +162,7 @@ def main():
     
     # Check if ChromaDB exists
     if not Path("./chroma_db").exists():
-        print("\n❌ Error: ./chroma_db directory not found")
+        print("\n[ERROR] ./chroma_db directory not found")
         print("Please run ingest_demo_data.py first")
         return
     
@@ -175,16 +175,16 @@ def main():
     print("\n" + "=" * 60)
     print("TEST SUMMARY")
     print("=" * 60)
-    print(f"\n  Test 1 (Conflict Detection): {'✓ PASS' if test1_passed else '✗ FAIL'}")
-    print(f"  Test 2 (Multi-Doc-Type Retrieval): {'✓ PASS' if test2_passed else '✗ FAIL'}")
-    print(f"  Test 3 (Citation Formatting): {'✓ PASS' if test3_passed else '✗ FAIL'}")
+    print(f"\n  Test 1 (Conflict Detection): {'[PASS]' if test1_passed else '[FAIL]'}")
+    print(f"  Test 2 (Multi-Doc-Type Retrieval): {'[PASS]' if test2_passed else '[FAIL]'}")
+    print(f"  Test 3 (Citation Formatting): {'[PASS]' if test3_passed else '[FAIL]'}")
     
     all_passed = test1_passed and test2_passed and test3_passed
     
     if all_passed:
-        print("\n✅ All demo queries work correctly!")
+        print("\n[SUCCESS] All demo queries work correctly!")
     else:
-        print("\n⚠ Some tests failed - review output above")
+        print("\n[WARNING] Some tests failed - review output above")
 
 
 if __name__ == "__main__":
