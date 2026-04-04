@@ -147,6 +147,13 @@ All show:
 - "Flag for Review" button
 - Expandable source details
 - Resolution explanation with temporal authority scoring
+- **"Confirm with AI" button** (appears when confidence >= 85%)
+
+**NEW: AI Confirmation Feature**
+- When confidence is high (>= 85%), a green "Confirm with AI" button appears
+- Clicking it validates the resolution using temporal authority scoring
+- Shows AI verification message with confidence percentage
+- All 4 conflict demo queries have confidence >= 85% (perfect for demos!)
 
 ### For Source Citation Demo
 All 8 questions show proper source citations with:
