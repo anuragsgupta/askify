@@ -254,5 +254,21 @@
     "chunk_count": 1,
     "file_size": 972,
     "embedding_provider": "ollama"
+  },
+  "doc_d15399f649b8": {
+    "filename": "Ayush_Kumar.pdf",
+    "source_type": "pdf",
+    "upload_date": "2026-04-04T12:31:29.222040",
+    "chunk_count": 1,
+    "file_size": 211027,
+    "embedding_provider": "ollama"
+  },
+  "doc_133c72f83d50": {
+    "filename": "Swati Singh.pdf",
+    "source_type": "pdf",
+    "upload_date": "2026-04-04T12:35:04.294308",
+    "chunk_count": 1,
+    "file_size": 152831,
+    "embedding_provider": "ollama"
   }
 }

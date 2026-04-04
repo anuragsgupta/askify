@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { BarChart2 } from 'lucide-react';
 import './TopBar.css';
 
 const TopBar = () => {
@@ -40,10 +39,6 @@ const TopBar = () => {
       <header className="topbar">
         <h1 className="page-title">{getPageTitle()}</h1>
         <div className="topbar-actions">
-          <button className="btn-secondary">
-            <BarChart2 size={18} />
-            Analytics
-          </button>
           <button className="btn-primary" onClick={openTicketModal}>
             Create Support Ticket
           </button>

@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 from fastapi import APIRouter, UploadFile, File, Header, HTTPException
 from typing import Optional
 
-from server.routes.upload import upload_file as _do_upload
+from routes.upload import upload_file as _do_upload
 
 router = APIRouter()
 

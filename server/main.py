@@ -29,12 +29,12 @@ print(f"📌 GEMINI_LLM_MODEL: {os.getenv('GEMINI_LLM_MODEL')}")
 print(f"📌 GEMINI_EMBEDDING_MODEL: {os.getenv('GEMINI_EMBEDDING_MODEL')}")
 print("="*60 + "\n")
 
-from server.routes.upload import router as upload_router
-from server.routes.query import router as query_router
-from server.routes.share import router as share_router
-from server.routes.analytics import router as analytics_router
-from server.routes.folder_watch import router as folder_watch_router, active_observers
-from server.services.folder_watcher import get_watched_folders, start_folder_watcher
+from routes.upload import router as upload_router
+from routes.query import router as query_router
+from routes.share import router as share_router
+from routes.analytics import router as analytics_router
+from routes.folder_watch import router as folder_watch_router, active_observers
+from services.folder_watcher import get_watched_folders, start_folder_watcher
 
 
 @asynccontextmanager

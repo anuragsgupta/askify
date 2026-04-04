@@ -2,7 +2,7 @@
 Analytics API Routes - Provide RAG performance metrics and knowledge graph data.
 """
 from fastapi import APIRouter, Query
-from server.services.analytics import get_analytics_summary, get_knowledge_graph_data
+from services.analytics import get_analytics_summary, get_knowledge_graph_data
 
 router = APIRouter(prefix="/api/analytics", tags=["analytics"])
 

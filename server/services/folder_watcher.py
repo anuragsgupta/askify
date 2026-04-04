@@ -9,9 +9,9 @@ from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from datetime import datetime
-from server.services.parser import parse_file
-from server.services.embeddings import embed_texts
-from server.services.vectorstore import add_documents
+from services.parser import parse_file
+from services.embeddings import embed_texts
+from services.vectorstore import add_documents
 
 DB_PATH = Path(__file__).parent.parent / "askify.db"
 

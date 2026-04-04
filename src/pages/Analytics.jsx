@@ -293,36 +293,34 @@ const Analytics = () => {
 
   // Mock data generator for demo purposes
   const getMockAnalytics = (days) => {
-    const queriesOverTime = [];
-    for (let i = days - 1; i >= 0; i--) {
-      const date = new Date();
-      date.setDate(date.getDate() - i);
-      queriesOverTime.push({
-        date: date.toISOString().split('T')[0],
-        count: Math.floor(Math.random() * 15) + 5
-      });
-    }
+    // Show only April 4th, 2026 data
+    const queriesOverTime = [
+      {
+        date: '2026-04-04',
+        count: 24
+      }
+    ];
 
     return {
-      total_queries: 247,
+      total_queries: 24,
       avg_relevance: 0.87,
       avg_response_time_ms: 1850,
       hallucination_rate: 4.2,
       conflict_rate: 12.5,
       queries_over_time: queriesOverTime,
       llm_usage: [
-        { llm: 'gemini', count: 189 },
-        { llm: 'ollama', count: 58 }
+        { llm: 'gemini', count: 18 },
+        { llm: 'ollama', count: 6 }
       ],
       top_topics: [
-        { topic: 'Pricing and Refund Policies', count: 45 },
-        { topic: 'Support Ticket Analysis', count: 38 },
-        { topic: 'User License Management', count: 32 },
-        { topic: 'Contract Terms and Renewals', count: 28 },
-        { topic: 'Client Comparisons', count: 24 },
-        { topic: 'Service Level Agreements', count: 19 },
-        { topic: 'Billing and Invoicing', count: 15 },
-        { topic: 'Feature Requests', count: 12 }
+        { topic: 'Pricing and Refund Policies', count: 5 },
+        { topic: 'Support Ticket Analysis', count: 4 },
+        { topic: 'User License Management', count: 3 },
+        { topic: 'Contract Terms and Renewals', count: 3 },
+        { topic: 'Client Comparisons', count: 2 },
+        { topic: 'Service Level Agreements', count: 2 },
+        { topic: 'Billing and Invoicing', count: 2 },
+        { topic: 'Feature Requests', count: 1 }
       ]
     };
   };
@@ -432,13 +430,6 @@ const Analytics = () => {
         >
           <Network size={18} />
           Knowledge Graph
-        </button>
-        <button 
-          className={activeTab === 'reports' ? 'active' : ''} 
-          onClick={() => setActiveTab('reports')}
-        >
-          <TrendingUp size={18} />
-          ROI Reports
         </button>
       </div>
 
@@ -743,363 +734,6 @@ const Analytics = () => {
               <VectorCluster3D />
             </div>
           )}
-        </div>
-      )}
-
-      {/* ROI Reports Tab */}
-      {activeTab === 'reports' && (
-        <div className="reports-container">
-          {/* Monthly ROI Summary */}
-          <div className="roi-summary glass-panel">
-            <h3>Monthly ROI Report</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '24px' }}>
-              Cost savings, time efficiency, and environmental impact for the current month
-            </p>
-            
-            <div className="roi-metrics-grid">
-              {/* Cost Savings */}
-              <div className="roi-metric-card">
-                <div className="roi-metric-icon" style={{ backgroundColor: '#10b98115', color: '#10b981' }}>
-                  💰
-                </div>
-                <div className="roi-metric-content">
-                  <div className="roi-metric-label">Cost Savings</div>
-                  <div className="roi-metric-value">$556.50</div>
-                  <div className="roi-metric-detail">vs Manual Process: $13,290/month</div>
-                  <div className="roi-metric-detail">vs Standard RAG: $652.50/month</div>
-                  <div className="roi-metric-trend" style={{ color: '#10b981' }}>
-                    ↑ 95.8% reduction
-                  </div>
-                </div>
-              </div>
-
-              {/* Time Savings */}
-              <div className="roi-metric-card">
-                <div className="roi-metric-icon" style={{ backgroundColor: '#3b82f615', color: '#3b82f6' }}>
-                  ⏱️
-                </div>
-                <div className="roi-metric-content">
-                  <div className="roi-metric-label">Time Saved</div>
-                  <div className="roi-metric-value">618 hours</div>
-                  <div className="roi-metric-detail">Avg query time: 10s vs 25min manual</div>
-                  <div className="roi-metric-detail">Equivalent to 77 work days saved</div>
-                  <div className="roi-metric-trend" style={{ color: '#3b82f6' }}>
-                    ↑ 99.3% faster resolution
-                  </div>
-                </div>
-              </div>
-
-              {/* Carbon Emissions */}
-              <div className="roi-metric-card">
-                <div className="roi-metric-icon" style={{ backgroundColor: '#10b98115', color: '#10b981' }}>
-                  🌱
-                </div>
-                <div className="roi-metric-content">
-                  <div className="roi-metric-label">Carbon Saved</div>
-                  <div className="roi-metric-value">38.1 kg CO₂</div>
-                  <div className="roi-metric-detail">Energy: 3.6 kWh vs 87 kWh</div>
-                  <div className="roi-metric-detail">Equivalent to planting 2 trees</div>
-                  <div className="roi-metric-trend" style={{ color: '#10b981' }}>
-                    ↓ 95.9% emission reduction
-                  </div>
-                </div>
-              </div>
-
-              {/* Human Resources */}
-              <div className="roi-metric-card">
-                <div className="roi-metric-icon" style={{ backgroundColor: '#f59e0b15', color: '#f59e0b' }}>
-                  👥
-                </div>
-                <div className="roi-metric-content">
-                  <div className="roi-metric-label">HR Efficiency</div>
-                  <div className="roi-metric-value">3.2 FTE</div>
-                  <div className="roi-metric-detail">Full-time equivalent saved</div>
-                  <div className="roi-metric-detail">Reallocated to strategic work</div>
-                  <div className="roi-metric-trend" style={{ color: '#f59e0b' }}>
-                    ↑ 320% productivity gain
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* API & Processing Metrics */}
-          <div className="api-metrics glass-panel">
-            <h3>API Usage & Processing Power</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '24px' }}>
-              LLM API calls, token consumption, and computational resources
-            </p>
-
-            <div className="api-stats-grid">
-              <div className="api-stat-card">
-                <div className="api-stat-header">
-                  <span className="api-stat-label">Total API Calls</span>
-                  <span className="api-stat-value">247</span>
-                </div>
-                <div className="api-stat-breakdown">
-                  <div className="api-stat-item">
-                    <span>Hardcoded Responses</span>
-                    <span className="api-stat-badge" style={{ backgroundColor: '#10b98115', color: '#10b981' }}>148 (60%)</span>
-                  </div>
-                  <div className="api-stat-item">
-                    <span>Gemini API</span>
-                    <span className="api-stat-badge" style={{ backgroundColor: '#3b82f615', color: '#3b82f6' }}>74 (30%)</span>
-                  </div>
-                  <div className="api-stat-item">
-                    <span>Ollama Local</span>
-                    <span className="api-stat-badge" style={{ backgroundColor: '#f59e0b15', color: '#f59e0b' }}>25 (10%)</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="api-stat-card">
-                <div className="api-stat-header">
-                  <span className="api-stat-label">Token Consumption</span>
-                  <span className="api-stat-value">1.2M</span>
-                </div>
-                <div className="api-stat-breakdown">
-                  <div className="api-stat-item">
-                    <span>Input Tokens</span>
-                    <span className="api-stat-badge">742K</span>
-                  </div>
-                  <div className="api-stat-item">
-                    <span>Output Tokens</span>
-                    <span className="api-stat-badge">458K</span>
-                  </div>
-                  <div className="api-stat-item">
-                    <span>Avg per Query</span>
-                    <span className="api-stat-badge">4,858 tokens</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="api-stat-card">
-                <div className="api-stat-header">
-                  <span className="api-stat-label">Processing Power</span>
-                  <span className="api-stat-value">3.6 kWh</span>
-                </div>
-                <div className="api-stat-breakdown">
-                  <div className="api-stat-item">
-                    <span>Compute Time</span>
-                    <span className="api-stat-badge">12.4 hours</span>
-                  </div>
-                  <div className="api-stat-item">
-                    <span>Avg Latency</span>
-                    <span className="api-stat-badge">850ms</span>
-                  </div>
-                  <div className="api-stat-item">
-                    <span>GPU Utilization</span>
-                    <span className="api-stat-badge">23%</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="api-stat-card">
-                <div className="api-stat-header">
-                  <span className="api-stat-label">Cost Breakdown</span>
-                  <span className="api-stat-value">$96.00</span>
-                </div>
-                <div className="api-stat-breakdown">
-                  <div className="api-stat-item">
-                    <span>Gemini API</span>
-                    <span className="api-stat-badge">$74.00</span>
-                  </div>
-                  <div className="api-stat-item">
-                    <span>Infrastructure</span>
-                    <span className="api-stat-badge">$18.00</span>
-                  </div>
-                  <div className="api-stat-item">
-                    <span>Storage</span>
-                    <span className="api-stat-badge">$4.00</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Ticket Management Dashboard */}
-          <div className="ticket-dashboard glass-panel">
-            <h3>Support Ticket Dashboard</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '24px' }}>
-              Submitted tickets and approval workflow status
-            </p>
-
-            {/* Ticket Summary Cards */}
-            <div className="ticket-summary-grid">
-              <div className="ticket-summary-card">
-                <div className="ticket-summary-icon" style={{ backgroundColor: '#3b82f615', color: '#3b82f6' }}>
-                  📋
-                </div>
-                <div className="ticket-summary-content">
-                  <div className="ticket-summary-value">42</div>
-                  <div className="ticket-summary-label">Total Tickets</div>
-                </div>
-              </div>
-
-              <div className="ticket-summary-card">
-                <div className="ticket-summary-icon" style={{ backgroundColor: '#f59e0b15', color: '#f59e0b' }}>
-                  ⏳
-                </div>
-                <div className="ticket-summary-content">
-                  <div className="ticket-summary-value">12</div>
-                  <div className="ticket-summary-label">Pending Review</div>
-                </div>
-              </div>
-
-              <div className="ticket-summary-card">
-                <div className="ticket-summary-icon" style={{ backgroundColor: '#10b98115', color: '#10b981' }}>
-                  ✓
-                </div>
-                <div className="ticket-summary-content">
-                  <div className="ticket-summary-value">28</div>
-                  <div className="ticket-summary-label">Approved</div>
-                </div>
-              </div>
-
-              <div className="ticket-summary-card">
-                <div className="ticket-summary-icon" style={{ backgroundColor: '#ef444415', color: '#ef4444' }}>
-                  ✗
-                </div>
-                <div className="ticket-summary-content">
-                  <div className="ticket-summary-value">2</div>
-                  <div className="ticket-summary-label">Rejected</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Ticket List */}
-            <div className="ticket-list">
-              <div className="ticket-list-header">
-                <h4>Recent Tickets</h4>
-                <button className="btn-secondary">View All</button>
-              </div>
-
-              <div className="ticket-items">
-                {/* Ticket 1 */}
-                <div className="ticket-item">
-                  <div className="ticket-item-header">
-                    <div className="ticket-item-id">#TKT-2024-042</div>
-                    <span className="ticket-status ticket-status-pending">Pending Review</span>
-                  </div>
-                  <div className="ticket-item-title">Refund policy clarification for Enterprise Corp</div>
-                  <div className="ticket-item-meta">
-                    <span>📅 Jan 15, 2025</span>
-                    <span>👤 Sarah Johnson</span>
-                    <span>⚠️ Conflict Detected</span>
-                  </div>
-                  <div className="ticket-item-actions">
-                    <button className="btn-approve">Approve</button>
-                    <button className="btn-reject">Reject</button>
-                    <button className="btn-view">View Details</button>
-                  </div>
-                </div>
-
-                {/* Ticket 2 */}
-                <div className="ticket-item">
-                  <div className="ticket-item-header">
-                    <div className="ticket-item-id">#TKT-2024-041</div>
-                    <span className="ticket-status ticket-status-approved">Approved</span>
-                  </div>
-                  <div className="ticket-item-title">License usage report for TechStart Solutions</div>
-                  <div className="ticket-item-meta">
-                    <span>📅 Jan 14, 2025</span>
-                    <span>👤 Mike Chen</span>
-                    <span>✓ No Conflicts</span>
-                  </div>
-                  <div className="ticket-item-actions">
-                    <button className="btn-view">View Details</button>
-                  </div>
-                </div>
-
-                {/* Ticket 3 */}
-                <div className="ticket-item">
-                  <div className="ticket-item-header">
-                    <div className="ticket-item-id">#TKT-2024-040</div>
-                    <span className="ticket-status ticket-status-pending">Pending Review</span>
-                  </div>
-                  <div className="ticket-item-title">Support ticket statistics Q4 2024</div>
-                  <div className="ticket-item-meta">
-                    <span>📅 Jan 14, 2025</span>
-                    <span>👤 Emily Rodriguez</span>
-                    <span>✓ No Conflicts</span>
-                  </div>
-                  <div className="ticket-item-actions">
-                    <button className="btn-approve">Approve</button>
-                    <button className="btn-reject">Reject</button>
-                    <button className="btn-view">View Details</button>
-                  </div>
-                </div>
-
-                {/* Ticket 4 */}
-                <div className="ticket-item">
-                  <div className="ticket-item-header">
-                    <div className="ticket-item-id">#TKT-2024-039</div>
-                    <span className="ticket-status ticket-status-approved">Approved</span>
-                  </div>
-                  <div className="ticket-item-title">Client comparison: pricing and support levels</div>
-                  <div className="ticket-item-meta">
-                    <span>📅 Jan 13, 2025</span>
-                    <span>👤 David Park</span>
-                    <span>⚠️ Conflict Resolved</span>
-                  </div>
-                  <div className="ticket-item-actions">
-                    <button className="btn-view">View Details</button>
-                  </div>
-                </div>
-
-                {/* Ticket 5 */}
-                <div className="ticket-item">
-                  <div className="ticket-item-header">
-                    <div className="ticket-item-id">#TKT-2024-038</div>
-                    <span className="ticket-status ticket-status-rejected">Rejected</span>
-                  </div>
-                  <div className="ticket-item-title">Outdated pricing information request</div>
-                  <div className="ticket-item-meta">
-                    <span>📅 Jan 12, 2025</span>
-                    <span>👤 Lisa Wang</span>
-                    <span>⚠️ Data Quality Issue</span>
-                  </div>
-                  <div className="ticket-item-actions">
-                    <button className="btn-view">View Details</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Monthly Trend Chart */}
-          <div className="monthly-trend glass-panel">
-            <h3>Monthly ROI Trend</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '24px' }}>
-              Cost savings and efficiency improvements over the last 6 months
-            </p>
-            
-            <div className="trend-chart">
-              {[
-                { month: 'Aug', savings: 420, time: 480, carbon: 28 },
-                { month: 'Sep', savings: 465, time: 520, carbon: 32 },
-                { month: 'Oct', savings: 498, time: 565, carbon: 35 },
-                { month: 'Nov', savings: 523, time: 590, carbon: 36 },
-                { month: 'Dec', savings: 542, time: 605, carbon: 37 },
-                { month: 'Jan', savings: 556, time: 618, carbon: 38 }
-              ].map((item, i) => {
-                const maxSavings = 600;
-                const height = (item.savings / maxSavings) * 100;
-                return (
-                  <div key={i} className="trend-bar-item">
-                    <div className="trend-bar" style={{ height: `${height}%` }}>
-                      <span className="trend-bar-value">${item.savings}</span>
-                    </div>
-                    <div className="trend-bar-label">{item.month}</div>
-                    <div className="trend-bar-details">
-                      <div>{item.time}h saved</div>
-                      <div>{item.carbon}kg CO₂</div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
         </div>
       )}
     </div>

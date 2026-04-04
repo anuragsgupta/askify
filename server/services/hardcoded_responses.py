@@ -327,6 +327,283 @@ Enterprise Corp is currently at 93.5% license utilization, suggesting an upgrade
         },
         "llm_used": "gemini",
         "avg_relevance": 0.96
+    },
+    
+    "what is the contract renewal date for techstart solutions": {
+        "answer": """**TechStart Solutions Contract Renewal Information:**
+
+**Current Contract:**
+- Renewal Date: January 15, 2025
+- Contract Type: Annual subscription
+- Auto-renewal: Enabled (can be disabled 30 days before renewal)
+
+**Renewal Terms:**
+- Same pricing: $1,000/month ($12,000/year)
+- Price lock guarantee through 2025
+- 30-day cancellation notice required
+- Renewal reminder sent 60 days in advance
+
+**Renewal Options:**
+1. **Auto-renew** (current setting)
+   - Seamless continuation of service
+   - No interruption
+   - Same terms and pricing
+
+2. **Renegotiate terms**
+   - Available 90 days before renewal
+   - Can adjust user count
+   - Can upgrade/downgrade tier
+   - Custom pricing for multi-year commitment
+
+3. **Cancel**
+   - Must notify 30 days before Jan 15, 2025
+   - Final billing on renewal date
+   - Data export available for 30 days post-cancellation
+
+**Important Dates:**
+- Nov 15, 2024: Renewal reminder sent
+- Dec 15, 2024: Last day to cancel without penalty
+- Jan 15, 2025: Contract renews automatically
+
+⚠️ **Conflict Note:** There is a discrepancy in the renewal date between the original contract (Jan 15, 2025) and a recent amendment (Jan 1, 2025). The system is using the most recent document (contract amendment dated Dec 2024) which shows Jan 1, 2025 as the official renewal date.""",
+        "sources": [
+            {
+                "source": "client_techstart_contract.pdf",
+                "source_type": "pdf",
+                "location": "Page 4, Section 7.2",
+                "relevance_score": 0.96,
+                "text": "TechStart Solutions contract term: Annual subscription renewing January 15, 2025, with auto-renewal enabled..."
+            },
+            {
+                "source": "contract_amendment_dec2024.pdf",
+                "source_type": "pdf",
+                "location": "Page 1, Amendment Terms",
+                "relevance_score": 0.98,
+                "text": "Amendment to TechStart contract: Renewal date moved to January 1, 2025 to align with fiscal year. Signed December 10, 2024..."
+            },
+            {
+                "source": "renewal_schedule_2025.xlsx",
+                "source_type": "excel",
+                "location": "Sheet: Q1 Renewals, Row 3",
+                "relevance_score": 0.94,
+                "text": "TechStart Solutions renewal scheduled for January 1, 2025, annual contract, $12,000..."
+            }
+        ],
+        "conflict_analysis": {
+            "has_conflicts": True,
+            "conflicts": [
+                {
+                    "topic": "Contract renewal date discrepancy",
+                    "sources": [
+                        {
+                            "source": "contract_amendment_dec2024.pdf",
+                            "source_type": "pdf",
+                            "value": "January 1, 2025",
+                            "date": "Dec 10, 2024",
+                            "location": "Page 1, Amendment Terms",
+                            "text_excerpt": "This amendment modifies the renewal date from January 15, 2025 to January 1, 2025 to align with the client's fiscal year calendar..."
+                        },
+                        {
+                            "source": "client_techstart_contract.pdf",
+                            "source_type": "pdf",
+                            "value": "January 15, 2025",
+                            "date": "Jan 15, 2024",
+                            "location": "Page 4, Section 7.2",
+                            "text_excerpt": "This agreement shall renew automatically on January 15, 2025 for an additional one-year term unless either party provides written notice..."
+                        }
+                    ],
+                    "resolution": {
+                        "chosen_source": "contract_amendment_dec2024.pdf",
+                        "reason": "The system prioritized 'contract_amendment_dec2024.pdf' (dated Dec 10, 2024) as it is a formal amendment that supersedes the original contract terms. Contract amendments always take precedence over original agreements.",
+                        "confidence": 0.92
+                    }
+                }
+            ],
+            "trusted_sources": ["contract_amendment_dec2024.pdf", "renewal_schedule_2025.xlsx"]
+        },
+        "llm_used": "gemini",
+        "avg_relevance": 0.96
+    },
+    
+    "what is the support response time for enterprise corp": {
+        "answer": """**Enterprise Corp Support Response Times:**
+
+**Current SLA (Service Level Agreement):**
+- **Critical Issues (P1):** 15 minutes response time
+- **High Priority (P2):** 2 hours response time
+- **Medium Priority (P3):** 8 hours response time
+- **Low Priority (P4):** 24 hours response time
+
+**Support Coverage:**
+- 24/7/365 availability
+- Dedicated account manager
+- 2 assigned support engineers
+- Direct phone line and Slack channel
+- Escalation path to engineering team
+
+**Actual Performance (Last Quarter):**
+- P1 average response: 12 minutes (20% better than SLA)
+- P2 average response: 1.5 hours (25% better than SLA)
+- P3 average response: 6 hours (25% better than SLA)
+- P4 average response: 18 hours (25% better than SLA)
+- Overall SLA compliance: 98.5%
+
+**Resolution Times:**
+- P1 average resolution: 4 hours
+- P2 average resolution: 12 hours
+- P3 average resolution: 2 business days
+- P4 average resolution: 5 business days
+
+⚠️ **Conflict Note:** There is a discrepancy in the P1 response time SLA. The original contract states 30 minutes, but a service upgrade document from November 2024 improved it to 15 minutes. The system is using the upgraded 15-minute SLA as it represents the current service level.""",
+        "sources": [
+            {
+                "source": "enterprise_corp_agreement.pdf",
+                "source_type": "pdf",
+                "location": "Page 3, SLA Terms",
+                "relevance_score": 0.97,
+                "text": "Enterprise Corp SLA: P1 critical issues 30-minute response, P2 2-hour response, 24/7 support with dedicated team..."
+            },
+            {
+                "source": "service_upgrade_nov2024.pdf",
+                "source_type": "pdf",
+                "location": "Page 1, Enhanced SLA",
+                "relevance_score": 0.99,
+                "text": "Service upgrade for Enterprise Corp: P1 response time improved from 30 minutes to 15 minutes, effective November 1, 2024..."
+            },
+            {
+                "source": "support_performance_q4.xlsx",
+                "source_type": "excel",
+                "location": "Sheet: Enterprise, Rows 10-25",
+                "relevance_score": 0.95,
+                "text": "Enterprise Corp Q4 performance: P1 avg 12 min, P2 avg 1.5 hrs, 98.5% SLA compliance..."
+            }
+        ],
+        "conflict_analysis": {
+            "has_conflicts": True,
+            "conflicts": [
+                {
+                    "topic": "P1 response time SLA discrepancy",
+                    "sources": [
+                        {
+                            "source": "service_upgrade_nov2024.pdf",
+                            "source_type": "pdf",
+                            "value": "15 minutes",
+                            "date": "Nov 01, 2024",
+                            "location": "Page 1, Enhanced SLA",
+                            "text_excerpt": "As part of our commitment to Enterprise Corp, we are upgrading the P1 critical issue response time from 30 minutes to 15 minutes, effective immediately..."
+                        },
+                        {
+                            "source": "enterprise_corp_agreement.pdf",
+                            "source_type": "pdf",
+                            "value": "30 minutes",
+                            "date": "Dec 01, 2023",
+                            "location": "Page 3, SLA Terms",
+                            "text_excerpt": "For Priority 1 (critical) issues, support team will respond within 30 minutes of ticket submission, 24/7/365..."
+                        }
+                    ],
+                    "resolution": {
+                        "chosen_source": "service_upgrade_nov2024.pdf",
+                        "reason": "The system prioritized 'service_upgrade_nov2024.pdf' (dated Nov 01, 2024) as it represents a service improvement that supersedes the original SLA. Service upgrades always override original contract terms to reflect current service levels.",
+                        "confidence": 0.94
+                    }
+                }
+            ],
+            "trusted_sources": ["service_upgrade_nov2024.pdf", "support_performance_q4.xlsx"]
+        },
+        "llm_used": "gemini",
+        "avg_relevance": 0.97
+    },
+    
+    "what are the api rate limits for startuphub": {
+        "answer": """**StartupHub Inc API Rate Limits:**
+
+**Current Limits (Starter Tier):**
+- **API Calls:** 5,000 calls/month
+- **Rate Limit:** 100 requests/minute
+- **Burst Limit:** 200 requests/minute (short bursts)
+- **Concurrent Connections:** 10 simultaneous connections
+
+**Usage Breakdown:**
+- Current monthly usage: 3,847 calls (77% of limit)
+- Average daily usage: 128 calls
+- Peak usage day: 342 calls (Dec 15, 2024)
+- Projected to stay within limits
+
+**Overage Pricing:**
+- Additional calls: $0.02 per call (beyond 5,000)
+- No overage charges if under 10% (up to 5,500 calls free)
+- Automatic billing for overages
+
+**Upgrade Options:**
+If you need more API capacity:
+1. **Standard Tier:** 10,000 calls/month ($1,000/month)
+2. **Premium Tier:** 25,000 calls/month ($2,000/month)
+3. **Enterprise Tier:** Unlimited calls ($2,500/month)
+
+**Rate Limit Handling:**
+- HTTP 429 status code when limit exceeded
+- Retry-After header indicates wait time
+- Exponential backoff recommended
+- Rate limit resets monthly on the 1st
+
+⚠️ **Conflict Note:** There is a discrepancy in the monthly API call limit. The original contract states 3,000 calls/month, but a capacity increase document from October 2024 upgraded it to 5,000 calls/month at no additional cost. The system is using the upgraded 5,000 call limit.""",
+        "sources": [
+            {
+                "source": "startuphub_terms.pdf",
+                "source_type": "pdf",
+                "location": "Page 2, API Terms",
+                "relevance_score": 0.96,
+                "text": "StartupHub Inc API limits: 3,000 calls per month, 100 requests/minute rate limit, Starter tier..."
+            },
+            {
+                "source": "capacity_increase_oct2024.pdf",
+                "source_type": "pdf",
+                "location": "Page 1, Service Enhancement",
+                "relevance_score": 0.98,
+                "text": "Capacity increase for StartupHub: API limit upgraded from 3,000 to 5,000 calls/month at no additional cost, effective October 15, 2024..."
+            },
+            {
+                "source": "api_usage_report.xlsx",
+                "source_type": "excel",
+                "location": "Sheet: StartupHub, Rows 5-15",
+                "relevance_score": 0.94,
+                "text": "StartupHub API usage: 3,847 calls this month out of 5,000 limit (77% utilization), average 128 calls/day..."
+            }
+        ],
+        "conflict_analysis": {
+            "has_conflicts": True,
+            "conflicts": [
+                {
+                    "topic": "Monthly API call limit discrepancy",
+                    "sources": [
+                        {
+                            "source": "capacity_increase_oct2024.pdf",
+                            "source_type": "pdf",
+                            "value": "5,000 calls/month",
+                            "date": "Oct 15, 2024",
+                            "location": "Page 1, Service Enhancement",
+                            "text_excerpt": "We are pleased to announce a capacity increase for all Starter tier clients. Your monthly API limit is being upgraded from 3,000 to 5,000 calls at no additional cost..."
+                        },
+                        {
+                            "source": "startuphub_terms.pdf",
+                            "source_type": "pdf",
+                            "value": "3,000 calls/month",
+                            "date": "Mar 01, 2024",
+                            "location": "Page 2, API Terms",
+                            "text_excerpt": "Starter tier includes 3,000 API calls per month with a rate limit of 100 requests per minute..."
+                        }
+                    ],
+                    "resolution": {
+                        "chosen_source": "capacity_increase_oct2024.pdf",
+                        "reason": "The system prioritized 'capacity_increase_oct2024.pdf' (dated Oct 15, 2024) as it represents a service enhancement that supersedes the original terms. Capacity increases are permanent changes that override original contract limits.",
+                        "confidence": 0.91
+                    }
+                }
+            ],
+            "trusted_sources": ["capacity_increase_oct2024.pdf", "api_usage_report.xlsx"]
+        },
+        "llm_used": "gemini",
+        "avg_relevance": 0.96
     }
 }
 

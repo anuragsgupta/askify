@@ -5,8 +5,8 @@ from fastapi import APIRouter, Header, HTTPException
 from pydantic import BaseModel
 from typing import Optional
 
-from server.services.rag import rag_query
-from server.services.database import (
+from services.rag import rag_query
+from services.database import (
     get_cached_answer, 
     save_chat, 
     get_recent_history,

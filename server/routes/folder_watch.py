@@ -4,7 +4,7 @@ Folder Watch Routes - API endpoints for folder watch management.
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, validator
 from typing import Optional, List
-from server.services.folder_watcher import (
+from services.folder_watcher import (
     add_watched_folder,
     remove_watched_folder,
     get_watched_folders,

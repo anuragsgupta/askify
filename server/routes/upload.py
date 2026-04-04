@@ -9,16 +9,16 @@ from fastapi import APIRouter, UploadFile, File, Header, HTTPException
 from pydantic import BaseModel
 from typing import Optional
 
-from server.services.parser import parse_file
-from server.services.embeddings import embed_texts
-from server.services.vectorstore import (
+from services.parser import parse_file
+from services.embeddings import embed_texts
+from services.vectorstore import (
     add_documents,
     get_all_documents,
     delete_document,
     get_document_count,
     get_unique_document_count,
 )
-from server.services.web_scraper import scrape_website, chunk_web_content
+from services.web_scraper import scrape_website, chunk_web_content
 
 router = APIRouter()
 
