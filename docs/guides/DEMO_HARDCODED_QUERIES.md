@@ -75,21 +75,81 @@ how many user licenses does enterprise corp have
 
 ---
 
+### 6. TechStart Contract Renewal (WITH CONFLICT DEMO) ⚠️
+```
+what is the contract renewal date for techstart solutions
+```
+**Shows**:
+- Current contract renewal date (Jan 1, 2025)
+- Contract type and auto-renewal settings
+- Renewal options and important dates
+- Cancellation terms
+
+**Conflict**: ✅ YES - Renewal date discrepancy
+- Original contract shows "January 15, 2025" (Jan 2024)
+- Contract amendment shows "January 1, 2025" (Dec 2024)
+- System chose amendment (supersedes original)
+- **Demonstrates temporal authority scoring!**
+
+---
+
+### 7. Enterprise Corp Support SLA (WITH CONFLICT DEMO) ⚠️
+```
+what is the support response time for enterprise corp
+```
+**Shows**:
+- Current SLA response times (P1: 15 min, P2: 2 hrs, P3: 8 hrs, P4: 24 hrs)
+- Support coverage (24/7, dedicated team)
+- Actual performance vs SLA (98.5% compliance)
+- Resolution times by priority
+
+**Conflict**: ✅ YES - P1 response time discrepancy
+- Original agreement shows "30 minutes" (Dec 2023)
+- Service upgrade shows "15 minutes" (Nov 2024)
+- System chose upgrade (service improvements override)
+- **Shows how upgrades supersede original terms!**
+
+---
+
+### 8. StartupHub API Limits (WITH CONFLICT DEMO) ⚠️
+```
+what are the api rate limits for startuphub
+```
+**Shows**:
+- Current API limits (5,000 calls/month, 100 req/min)
+- Usage breakdown (3,847 calls, 77% utilization)
+- Overage pricing and upgrade options
+- Rate limit handling
+
+**Conflict**: ✅ YES - Monthly API call limit discrepancy
+- Original terms show "3,000 calls/month" (Mar 2024)
+- Capacity increase shows "5,000 calls/month" (Oct 2024)
+- System chose capacity increase (permanent enhancement)
+- **Demonstrates capacity upgrade handling!**
+
+---
+
 ## 💡 Demo Tips
 
 ### For Speed Demo
-Use any of the 5 questions above to show instant responses (no LLM wait time).
+Use any of the 8 questions above to show instant responses (no LLM wait time).
 
 ### For Conflict Detection Demo
-**Use question #2** (client comparison) to demonstrate:
-1. Conflict detection system
-2. Source citation with conflicting values
-3. "Flag for Review" button
-4. Expandable source details
-5. Resolution explanation (newer document chosen)
+**Use questions #2, #6, #7, or #8** to demonstrate:
+1. **Question #2** (Client Comparison) - Refund policy conflict
+2. **Question #6** (TechStart Renewal) - Contract amendment superseding original
+3. **Question #7** (Enterprise SLA) - Service upgrade improving response time
+4. **Question #8** (StartupHub API) - Capacity increase overriding original limit
+
+All show:
+- Conflict detection system
+- Source citation with conflicting values
+- "Flag for Review" button
+- Expandable source details
+- Resolution explanation with temporal authority scoring
 
 ### For Source Citation Demo
-All 5 questions show proper source citations with:
+All 8 questions show proper source citations with:
 - Source name and type (PDF, Excel)
 - Location (page, sheet, row)
 - Relevance scores
@@ -102,7 +162,8 @@ All 5 questions show proper source citations with:
 - **Response Time**: Instant (< 50ms)
 - **Caching**: Responses are cached after first query
 - **Fallback**: If no match, proceeds with normal RAG pipeline
-- **Matching**: Case-insensitive exact match + 60% fuzzy match
+- **Matching**: Case-insensitive exact match + 50% fuzzy match threshold
+- **Total Hardcoded Queries**: 8 (4 with conflicts, 4 without)
 
 ---
 

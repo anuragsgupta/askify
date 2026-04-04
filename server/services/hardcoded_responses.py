@@ -643,6 +643,15 @@ def get_hardcoded_response(question: str) -> dict:
         ],
         "how many user licenses does enterprise corp have": [
             "user", "licenses", "enterprise", "corp", "how many", "many"
+        ],
+        "what is the contract renewal date for techstart solutions": [
+            "contract", "renewal", "renew", "date", "techstart", "solutions", "when"
+        ],
+        "what is the support response time for enterprise corp": [
+            "support", "response", "time", "sla", "enterprise", "corp", "how fast", "how long"
+        ],
+        "what are the api rate limits for startuphub": [
+            "api", "rate", "limit", "limits", "startuphub", "calls", "requests"
         ]
     }
     
