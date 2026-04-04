@@ -1,0 +1,116 @@
+From: learning@company.com
+To: engineering-team@company.com
+Subject: Invitation: Advanced Cloud Architecture Workshop - Feb 12-14
+Date: Wed, 24 Jan 2024 13:30:00 +0530
+
+Hello Engineering Team,
+
+We're excited to invite you to our Advanced Cloud Architecture Workshop, designed to enhance your skills in modern cloud infrastructure and best practices.
+
+Workshop Details:
+
+Title: Advanced Cloud Architecture & DevOps Practices
+Dates: February 12-14, 2024 (3 days)
+Time: 9:00 AM - 5:00 PM IST
+Location: Training Room 3A (Building B) + Virtual Option
+Instructor: Dr. Priya Sharma (AWS Certified Solutions Architect)
+Capacity: 30 participants (20 in-person, 10 virtual)
+
+What You'll Learn:
+
+Day 1: Cloud Infrastructure Fundamentals
+- AWS/Azure/GCP architecture comparison
+- Designing scalable systems
+- High availability and disaster recovery
+- Cost optimization strategies
+- Hands-on: Deploy a multi-tier application
+
+Day 2: DevOps & CI/CD
+- Infrastructure as Code (Terraform, CloudFormation)
+- Container orchestration (Kubernetes, Docker)
+- CI/CD pipelines (Jenkins, GitLab CI)
+- Monitoring and logging (Prometheus, ELK)
+- Hands-on: Build a complete CI/CD pipeline
+
+Day 3: Security & Best Practices
+- Cloud security fundamentals
+- Identity and access management
+- Encryption and key management
+- Compliance and governance
+- Hands-on: Implement security controls
+
+Prerequisites:
+- Basic understanding of cloud concepts
+- Familiarity with Linux command line
+- Experience with at least one programming language
+- Laptop with admin access (for hands-on labs)
+
+What's Included:
+✓ Comprehensive training materials
+✓ Hands-on lab access (AWS sandbox)
+✓ Certificate of completion
+✓ Lunch and refreshments (in-person)
+✓ Recording access (for virtual attendees)
+✓ 30-day post-workshop support
+
+Benefits:
+- Earn 24 CPE credits
+- Prepare for AWS Solutions Architect certification
+- Apply learnings to current projects
+- Network with peers
+- Career advancement opportunities
+
+Registration:
+
+Priority: Engineering team members
+Deadline: February 5, 2024
+Cost: Free (company-sponsored)
+Register: https://learning.company.com/cloud-workshop
+
+To Register:
+1. Visit the registration link
+2. Fill out the pre-assessment form
+3. Select in-person or virtual attendance
+4. Get manager approval (auto-email sent)
+5. Receive confirmation within 24 hours
+
+Manager Approval:
+This workshop requires 3 days away from regular duties. Please discuss with your manager before registering. Approval is automatic for team members working on cloud migration projects.
+
+Post-Workshop:
+- Apply learnings to Project Phoenix (cloud migration)
+- Share knowledge with team (brown bag session)
+- Optional: Pursue AWS certification (company-sponsored)
+
+Testimonials from Previous Workshops:
+
+"Best technical training I've attended. Immediately applicable to my work."
+- Raj Kumar, Senior Developer
+
+"Dr. Sharma's teaching style is excellent. The hands-on labs were invaluable."
+- Anita Desai, DevOps Engineer
+
+"Helped me pass my AWS certification on the first try!"
+- Mohammed Ali, Cloud Architect
+
+FAQs:
+
+Q: Can I attend virtually?
+A: Yes, but in-person is recommended for better hands-on experience.
+
+Q: Will recordings be available?
+A: Yes, for 90 days after the workshop.
+
+Q: What if I can't attend all 3 days?
+A: Full attendance is required for certification.
+
+Q: Is this suitable for beginners?
+A: Basic cloud knowledge is required. We offer a "Cloud Fundamentals" course for beginners.
+
+Questions?
+Contact: learning@company.com or ext. 3100
+
+We look forward to seeing you there!
+
+Best regards,
+Learning & Development Team

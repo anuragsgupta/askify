@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-multipart
+google-genai
+chromadb
+pymupdf4llm
+openpyxl
+python-dateutil
+requests
+python-dotenv

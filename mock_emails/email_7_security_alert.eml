@@ -1,0 +1,91 @@
+From: security@company.com
+To: all-employees@company.com
+Subject: SECURITY ALERT: Phishing Attempt Detected - Action Required
+Date: Tue, 23 Jan 2024 08:00:00 +0530
+Priority: High
+
+URGENT SECURITY NOTICE
+
+Dear Team Members,
+
+Our security team has detected a sophisticated phishing campaign targeting our employees. Please read this carefully and take immediate action.
+
+Threat Details:
+
+Attack Type: Spear Phishing
+Target: Company employees
+Method: Fake IT support emails
+Status: Active (detected 6 hours ago)
+Affected: 12 employees clicked the link (accounts secured)
+
+What the Phishing Email Looks Like:
+
+Subject: "Urgent: Your Account Will Be Suspended"
+From: "IT Support" <support@company-it.com> [FAKE]
+Content: Claims your account will be suspended due to "suspicious activity"
+Action: Asks you to click a link to "verify your identity"
+Link: Leads to a fake login page that steals credentials
+
+Red Flags to Watch For:
+1. Urgent or threatening language
+2. Sender email doesn't match company domain (@company.com)
+3. Generic greetings ("Dear User" instead of your name)
+4. Suspicious links (hover to see real URL)
+5. Requests for passwords or sensitive information
+6. Poor grammar or spelling errors
+
+IMMEDIATE ACTIONS REQUIRED:
+
+If You Clicked the Link:
+1. Change your password IMMEDIATELY
+2. Enable two-factor authentication (2FA)
+3. Report to security@company.com
+4. Check your account for unauthorized access
+5. Monitor your email for suspicious activity
+
+If You Received But Didn't Click:
+1. Delete the email immediately
+2. Report it to security@company.com
+3. Do NOT forward it to colleagues
+4. Mark as spam/phishing
+
+Prevention Best Practices:
+
+✓ Always verify sender email addresses
+✓ Never click links in unexpected emails
+✓ Use 2FA on all accounts
+✓ Report suspicious emails immediately
+✓ Attend mandatory security training (scheduled for Feb 5)
+✓ Keep software and antivirus updated
+✓ Use strong, unique passwords
+✓ Be skeptical of urgent requests
+
+Company Policy Reminder:
+- IT will NEVER ask for your password via email
+- We will NEVER threaten account suspension without prior notice
+- All official communications come from @company.com domain
+- When in doubt, call IT directly at ext. 2500
+
+Security Measures Implemented:
+- Enhanced email filtering
+- Additional monitoring on all accounts
+- Mandatory 2FA rollout (deadline: Jan 31)
+- Security awareness training (Feb 5, mandatory)
+- Incident response team on standby
+
+Reporting:
+If you receive ANY suspicious email:
+1. Do NOT click any links
+2. Forward to security@company.com
+3. Delete the original email
+4. Report via our Security Portal
+
+Questions?
+Contact: security@company.com or ext. 2600
+Available: 24/7
+
+Thank you for your vigilance in keeping our company secure.
+
+Stay Safe,
+Security Operations Team
+Company InfoSec

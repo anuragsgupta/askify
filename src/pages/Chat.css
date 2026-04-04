@@ -18,11 +18,57 @@
   background: white;
   border-top-left-radius: var(--radius-md);
   border-top-right-radius: var(--radius-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .chat-header h3 {
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-color);
+}
+
+.icon-btn:hover {
+  background: var(--bg-secondary);
+  border-color: var(--primary-color);
+}
+
+.sessions-dropdown {
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.session-item {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .chat-messages {

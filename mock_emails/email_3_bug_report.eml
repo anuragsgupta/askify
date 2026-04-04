@@ -1,0 +1,48 @@
+From: mike.chen@company.com
+To: dev-team@company.com
+Subject: URGENT: Critical Bug in Payment Processing
+Date: Wed, 17 Jan 2024 09:15:00 +0530
+Priority: High
+
+Team,
+
+We've identified a critical bug in the payment processing module that's affecting production users.
+
+Bug Details:
+- Issue: Payment transactions are failing for amounts over $1000
+- Error Code: PAYMENT_GATEWAY_ERROR_500
+- Affected Users: Approximately 23 customers in the last 2 hours
+- First Reported: Today at 7:30 AM IST
+
+Steps to Reproduce:
+1. Login to the application
+2. Add items to cart totaling more than $1000
+3. Proceed to checkout
+4. Enter payment details
+5. Click "Complete Purchase"
+6. Error appears: "Transaction failed. Please try again."
+
+Expected Behavior:
+Payment should process successfully regardless of amount (up to $10,000 limit).
+
+Actual Behavior:
+All transactions over $1000 are failing with a 500 error from the payment gateway.
+
+Environment:
+- Production server
+- Payment Gateway: Stripe API v2023.12
+- Browser: All browsers affected
+- OS: All operating systems
+
+Impact:
+HIGH - This is blocking revenue and affecting customer trust. We've received 5 support tickets already.
+
+Temporary Workaround:
+Advising customers to split large purchases into multiple transactions under $1000 each.
+
+Action Required:
+Please investigate immediately and provide an ETA for the fix. I'm available for a call if needed.
+
+Thanks,
+Mike Chen
+Senior QA Engineer
