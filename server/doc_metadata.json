@@ -270,5 +270,13 @@
     "chunk_count": 1,
     "file_size": 152831,
     "embedding_provider": "ollama"
+  },
+  "doc_76dd88a573b0": {
+    "filename": "DSA_2022.txt",
+    "source_type": "text",
+    "upload_date": "2026-04-04T13:09:48.337771",
+    "chunk_count": 6,
+    "file_size": 25533,
+    "embedding_provider": "ollama"
   }
 }
