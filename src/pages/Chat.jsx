@@ -6,6 +6,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [loadingStatus, setLoadingStatus] = useState('');
   const [lastResponse, setLastResponse] = useState(null);
   const messagesEndRef = useRef(null);
   const [expandedSource, setExpandedSource] = useState(null);
@@ -119,6 +120,27 @@ const Chat = () => {
     setInputValue('');
     setIsLoading(true);
 
+    // Simulate progressive AI processing steps
+    const statusMessages = [
+      '🔍 Analyzing your question...',
+      '🧠 Generating semantic embeddings...',
+      '📚 Searching knowledge base...',
+      '🔗 Retrieving relevant documents...',
+      '⚖️ Checking for conflicts...',
+      '✨ Generating AI response...'
+    ];
+
+    let statusIndex = 0;
+    setLoadingStatus(statusMessages[0]);
+
+    // Update status every 1.5 seconds
+    const statusInterval = setInterval(() => {
+      statusIndex++;
+      if (statusIndex < statusMessages.length) {
+        setLoadingStatus(statusMessages[statusIndex]);
+      }
+    }, 1500);
+
     try {
       const res = await fetch('/api/query', {
         method: 'POST',
@@ -131,6 +153,8 @@ const Chat = () => {
           session_id: currentSessionId 
         }),
       });
+
+      clearInterval(statusInterval);
 
       if (!res.ok) {
         const errData = await res.json();
@@ -147,11 +171,13 @@ const Chat = () => {
         await loadSessions();
       }
     } catch (err) {
+      clearInterval(statusInterval);
       setMessages(prev => [...prev, { sender: 'ai', text: `❌ Error: ${err.message}` }]);
       setLastResponse(null);
     }
 
     setIsLoading(false);
+    setLoadingStatus('');
   };
 
   const getSourceIcon = (type) => {
@@ -300,7 +326,7 @@ const Chat = () => {
             <div className="chat-bubble-container ai">
               <div className="chat-bubble ai" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Loader size={16} style={{ animation: 'spin 1s linear infinite' }} />
-                Analyzing knowledge base...
+                {loadingStatus || 'Processing...'}
               </div>
             </div>
           )}
@@ -325,33 +351,180 @@ const Chat = () => {
 
         {/* Conflict Analysis */}
         <div className="chat-conflict glass-panel">
-          <h3>Conflict Analysis</h3>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+            <h3 style={{ margin: 0 }}>Conflict Analysis</h3>
+            {conflict && conflict.has_conflicts && (
+              <button 
+                className="btn-secondary"
+                onClick={async () => {
+                  const conflictData = {
+                    question: messages[messages.length - 2]?.text || 'Unknown question',
+                    conflicts: conflict,
+                    timestamp: new Date().toISOString(),
+                    session_id: currentSessionId
+                  };
+                  
+                  try {
+                    const res = await fetch('/api/conflicts/flag-review', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify(conflictData)
+                    });
+                    
+                    if (res.ok) {
+                      const data = await res.json();
+                      alert(`✅ Conflict flagged for admin review!\n\nReview ID: ${data.review_id}\n\nAn administrator will verify the sources and resolution.`);
+                    } else {
+                      throw new Error('Failed to flag conflict');
+                    }
+                  } catch (err) {
+                    console.error('Error flagging conflict:', err);
+                    alert('❌ Failed to flag conflict for review. Please try again.');
+                  }
+                }}
+                style={{ 
+                  fontSize: '0.8rem', 
+                  padding: '6px 12px',
+                  backgroundColor: '#fef3c7',
+                  color: '#92400e',
+                  border: '1px solid #fbbf24'
+                }}
+              >
+                🚩 Flag for Review
+              </button>
+            )}
+          </div>
           {conflict && conflict.has_conflicts ? (
             <>
-              <div className="conflict-table-header">
-                <span>Source</span>
-                <span>Value</span>
-                <span>Date</span>
-              </div>
-              <div className="conflict-rows">
+              <div className="conflict-sources-detailed">
                 {conflict.conflicts[0]?.sources?.map((src, i) => {
                   const Icon = getSourceIcon(src.source_type);
                   const color = getSourceColor(src.source_type);
+                  const isExpanded = expandedSource === `conflict-${i}`;
                   return (
-                    <div key={i} className="conflict-row">
-                      <div className="conflict-source">
-                        <div className="source-icon" style={{ backgroundColor: `${color}15`, color }}>
-                          <Icon size={16} />
+                    <div key={i} className="conflict-source-card" style={{
+                      border: '1px solid var(--border-color)',
+                      borderRadius: '8px',
+                      padding: '12px',
+                      marginBottom: '12px',
+                      backgroundColor: 'var(--bg-secondary)'
+                    }}>
+                      {/* Header Row */}
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '8px' }}>
+                        <div className="source-icon" style={{ 
+                          backgroundColor: `${color}15`, 
+                          color,
+                          padding: '8px',
+                          borderRadius: '6px',
+                          flexShrink: 0
+                        }}>
+                          <Icon size={18} />
                         </div>
-                        <span>{src.source}</span>
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ 
+                            fontSize: '0.9rem', 
+                            fontWeight: 600, 
+                            marginBottom: '4px',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            whiteSpace: 'nowrap'
+                          }}>
+                            {src.source}
+                          </div>
+                          <div style={{ 
+                            fontSize: '0.75rem', 
+                            color: 'var(--text-muted)',
+                            marginBottom: '4px'
+                          }}>
+                            {src.location || 'Location not specified'}
+                          </div>
+                          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '6px' }}>
+                            <span style={{
+                              padding: '4px 8px',
+                              backgroundColor: '#fee2e2',
+                              color: '#dc2626',
+                              borderRadius: '4px',
+                              fontSize: '0.8rem',
+                              fontWeight: 600
+                            }}>
+                              {src.value}
+                            </span>
+                            {src.date && (
+                              <span style={{
+                                padding: '4px 8px',
+                                backgroundColor: '#fef3c7',
+                                color: '#92400e',
+                                borderRadius: '4px',
+                                fontSize: '0.75rem'
+                              }}>
+                                📅 {src.date}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        <button
+                          onClick={() => setExpandedSource(isExpanded ? null : `conflict-${i}`)}
+                          style={{
+                            background: 'none',
+                            border: 'none',
+                            cursor: 'pointer',
+                            padding: '4px',
+                            color: 'var(--text-muted)',
+                            flexShrink: 0
+                          }}
+                        >
+                          {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                        </button>
                       </div>
-                      <div className="conflict-val">
-                        {formatConflictValues(src.value)}
-                      </div>
-                      <div className="conflict-date">{src.date || '—'}</div>
+                      
+                      {/* Expandable Citation */}
+                      {isExpanded && src.text_excerpt && (
+                        <div style={{
+                          marginTop: '12px',
+                          padding: '12px',
+                          backgroundColor: 'var(--bg-primary)',
+                          borderRadius: '6px',
+                          borderLeft: `3px solid ${color}`
+                        }}>
+                          <div style={{ 
+                            fontSize: '0.7rem', 
+                            fontWeight: 600, 
+                            color: 'var(--text-muted)',
+                            marginBottom: '6px',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.5px'
+                          }}>
+                            Source Citation
+                          </div>
+                          <div style={{ 
+                            fontSize: '0.85rem', 
+                            lineHeight: '1.5',
+                            color: 'var(--text-color)',
+                            fontStyle: 'italic'
+                          }}>
+                            "{src.text_excerpt}..."
+                          </div>
+                        </div>
+                      )}
                     </div>
                   );
                 })}
+              </div>
+              
+              {/* Conflict Summary */}
+              <div style={{
+                marginTop: '16px',
+                padding: '12px',
+                backgroundColor: '#fef3c7',
+                borderRadius: '8px',
+                border: '1px solid #fbbf24'
+              }}>
+                <div style={{ fontSize: '0.85rem', color: '#92400e', fontWeight: 600, marginBottom: '4px' }}>
+                  ⚠️ {conflict.conflicts[0]?.sources?.length || 0} sources with conflicting information
+                </div>
+                <div style={{ fontSize: '0.8rem', color: '#78350f' }}>
+                  {conflict.conflicts[0]?.topic || 'Value discrepancy detected'}
+                </div>
               </div>
             </>
           ) : (

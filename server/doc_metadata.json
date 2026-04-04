@@ -1,28 +1,4 @@
 {
-  "doc_8894616fe91d": {
-    "filename": "client_acme_corp_new_policy.txt",
-    "source_type": "text",
-    "upload_date": "2026-04-04T09:08:22.805784",
-    "chunk_count": 1,
-    "file_size": 3900,
-    "embedding_provider": "ollama"
-  },
-  "doc_37670dfd36c4": {
-    "filename": "client_techstart_inc_new_policy.txt",
-    "source_type": "text",
-    "upload_date": "2026-04-04T09:08:23.942683",
-    "chunk_count": 2,
-    "file_size": 6021,
-    "embedding_provider": "ollama"
-  },
-  "doc_b44b94a50ad2": {
-    "filename": "client_techstart_inc_old_quote.eml",
-    "source_type": "text",
-    "upload_date": "2026-04-04T09:08:24.085553",
-    "chunk_count": 1,
-    "file_size": 1693,
-    "embedding_provider": "ollama"
-  },
   "doc_7900875914f0": {
     "filename": "client_acme_corp_support_history.txt",
     "source_type": "text",
@@ -99,6 +75,182 @@
     "filename": "email_1_project_update.eml",
     "source_type": "text",
     "upload_date": "2026-04-04T09:08:45.638892",
+    "chunk_count": 1,
+    "file_size": 972,
+    "embedding_provider": "ollama"
+  },
+  "doc_c833adac801d": {
+    "filename": "refund_policy_details.xlsx",
+    "source_type": "xlsx",
+    "upload_date": "2026-04-04T09:19:51.338939",
+    "chunk_count": 2,
+    "file_size": 5930,
+    "embedding_provider": "ollama"
+  },
+  "doc_de5ab3c90c75": {
+    "filename": "product_features_matrix.xlsx",
+    "source_type": "xlsx",
+    "upload_date": "2026-04-04T09:19:51.693770",
+    "chunk_count": 2,
+    "file_size": 6230,
+    "embedding_provider": "ollama"
+  },
+  "doc_7d19f140c213": {
+    "filename": "support_tickets_database.xlsx",
+    "source_type": "xlsx",
+    "upload_date": "2026-04-04T09:19:52.731789",
+    "chunk_count": 3,
+    "file_size": 6938,
+    "embedding_provider": "ollama"
+  },
+  "doc_293ba31a1436": {
+    "filename": "client_pricing_sheet.xlsx",
+    "source_type": "xlsx",
+    "upload_date": "2026-04-04T09:19:53.064872",
+    "chunk_count": 2,
+    "file_size": 6076,
+    "embedding_provider": "ollama"
+  },
+  "doc_a53ff502d924": {
+    "filename": "1-s2.0-S2352711024001481-main.pdf",
+    "source_type": "pdf",
+    "upload_date": "2026-04-04T09:27:16.232256",
+    "chunk_count": 9,
+    "file_size": 1046482,
+    "embedding_provider": "ollama"
+  },
+  "doc_a39ae6648eea": {
+    "filename": "refund_policy_details.xlsx",
+    "source_type": "xlsx",
+    "upload_date": "2026-04-04T10:19:37.878698",
+    "chunk_count": 2,
+    "file_size": 5930,
+    "embedding_provider": "ollama"
+  },
+  "doc_354ca60e933b": {
+    "filename": "product_features_matrix.xlsx",
+    "source_type": "xlsx",
+    "upload_date": "2026-04-04T10:19:38.194838",
+    "chunk_count": 2,
+    "file_size": 6230,
+    "embedding_provider": "ollama"
+  },
+  "doc_4bc16fc5f4c0": {
+    "filename": "support_tickets_database.xlsx",
+    "source_type": "xlsx",
+    "upload_date": "2026-04-04T10:19:39.189490",
+    "chunk_count": 3,
+    "file_size": 6938,
+    "embedding_provider": "ollama"
+  },
+  "doc_4b27c0328d27": {
+    "filename": "client_pricing_sheet.xlsx",
+    "source_type": "xlsx",
+    "upload_date": "2026-04-04T10:19:39.495524",
+    "chunk_count": 2,
+    "file_size": 6076,
+    "embedding_provider": "ollama"
+  },
+  "doc_c660bc86764f": {
+    "filename": "client_techstart_inc_new_policy.txt",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:19:40.484543",
+    "chunk_count": 2,
+    "file_size": 6021,
+    "embedding_provider": "ollama"
+  },
+  "doc_a793853a0e20": {
+    "filename": "client_techstart_inc_old_quote.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:19:40.614208",
+    "chunk_count": 1,
+    "file_size": 1693,
+    "embedding_provider": "ollama"
+  },
+  "doc_0ac61c0399df": {
+    "filename": "client_acme_corp_support_history.txt",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:19:41.304880",
+    "chunk_count": 1,
+    "file_size": 4138,
+    "embedding_provider": "ollama"
+  },
+  "doc_6de0ecef7b7e": {
+    "filename": "client_acme_corp_new_policy.txt",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:19:42.006798",
+    "chunk_count": 1,
+    "file_size": 3900,
+    "embedding_provider": "ollama"
+  },
+  "doc_8faa6041e71e": {
+    "filename": "client_acme_corp_old_email.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:19:42.114268",
+    "chunk_count": 1,
+    "file_size": 1069,
+    "embedding_provider": "ollama"
+  },
+  "doc_f76246967abb": {
+    "filename": "email_8_training_invitation.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:20:10.226272",
+    "chunk_count": 1,
+    "file_size": 3595,
+    "embedding_provider": "ollama"
+  },
+  "doc_4bf6885cd806": {
+    "filename": "email_7_security_alert.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:20:10.452834",
+    "chunk_count": 1,
+    "file_size": 2810,
+    "embedding_provider": "ollama"
+  },
+  "doc_1dced0ff9250": {
+    "filename": "email_6_sales_proposal.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:20:10.645199",
+    "chunk_count": 1,
+    "file_size": 2514,
+    "embedding_provider": "ollama"
+  },
+  "doc_79865a598352": {
+    "filename": "email_5_hr_announcement.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:20:10.779011",
+    "chunk_count": 1,
+    "file_size": 1884,
+    "embedding_provider": "ollama"
+  },
+  "doc_5482dfec5737": {
+    "filename": "email_4_meeting_notes.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:20:10.928736",
+    "chunk_count": 1,
+    "file_size": 1807,
+    "embedding_provider": "ollama"
+  },
+  "doc_7743456d78ed": {
+    "filename": "email_3_bug_report.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:20:11.033130",
+    "chunk_count": 1,
+    "file_size": 1434,
+    "embedding_provider": "ollama"
+  },
+  "doc_8f98c07e1f7e": {
+    "filename": "email_2_customer_inquiry.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:20:11.122504",
+    "chunk_count": 1,
+    "file_size": 1139,
+    "embedding_provider": "ollama"
+  },
+  "doc_351fe573b621": {
+    "filename": "email_1_project_update.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T10:20:11.217257",
     "chunk_count": 1,
     "file_size": 972,
     "embedding_provider": "ollama"

@@ -3,6 +3,7 @@ Askify RAG Backend — FastAPI Application
 """
 import os
 from pathlib import Path
+from contextlib import asynccontextmanager
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -31,8 +32,43 @@ print("="*60 + "\n")
 from server.routes.upload import router as upload_router
 from server.routes.query import router as query_router
 from server.routes.share import router as share_router
+from server.routes.analytics import router as analytics_router
+from server.routes.folder_watch import router as folder_watch_router, active_observers
+from server.services.folder_watcher import get_watched_folders, start_folder_watcher
 
-app = FastAPI(title="Askify RAG API", version="1.0.0")
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """
+    Lifespan context manager for application startup and shutdown.
+    
+    Startup: Initialize watchers for all active folders
+    Shutdown: Stop all observers
+    """
+    # Startup: Initialize watchers for all active folders
+    print("\n🔍 Initializing folder watchers...")
+    folders = get_watched_folders()
+    
+    for folder in folders:
+        if folder["is_active"]:
+            observer, message = start_folder_watcher(folder["folder_path"])
+            if observer:
+                active_observers[folder["folder_path"]] = observer
+                print(f"✅ {message}")
+    
+    print(f"✅ Started {len(active_observers)} folder watchers\n")
+    
+    yield
+    
+    # Shutdown: Stop all observers
+    print("\n🛑 Stopping folder watchers...")
+    for folder_path, observer in active_observers.items():
+        observer.stop()
+        observer.join()
+        print(f"✅ Stopped watcher for: {folder_path}")
+
+
+app = FastAPI(title="Askify RAG API", version="1.0.0", lifespan=lifespan)
 
 # CORS — allow Vite dev server
 app.add_middleware(
@@ -47,6 +83,8 @@ app.add_middleware(
 app.include_router(upload_router, prefix="/api")
 app.include_router(query_router, prefix="/api")
 app.include_router(share_router, prefix="/api")
+app.include_router(analytics_router)
+app.include_router(folder_watch_router, prefix="/api")
 
 
 @app.get("/api/health")

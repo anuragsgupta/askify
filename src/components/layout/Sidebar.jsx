@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { MessageSquare, FileText, LayoutDashboard, BarChart2, Settings, Box } from 'lucide-react';
+import { MessageSquare, FileText, LayoutDashboard, BarChart2, Settings, Box, TrendingUp } from 'lucide-react';
 import './Sidebar.css';
 
 const Sidebar = () => {
@@ -8,6 +8,7 @@ const Sidebar = () => {
     { path: '/chat', name: 'Chat', icon: MessageSquare },
     { path: '/documents', name: 'Documents', icon: FileText },
     { path: '/dashboard', name: 'Dashboard', icon: LayoutDashboard },
+    { path: '/analytics', name: 'Analytics', icon: TrendingUp },
     { path: '/reports', name: 'Reports', icon: BarChart2 },
     { path: '/settings', name: 'Settings', icon: Settings },
   ];

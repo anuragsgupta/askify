@@ -6,6 +6,7 @@ import os
 import json
 from datetime import datetime
 from fastapi import APIRouter, UploadFile, File, Header, HTTPException
+from pydantic import BaseModel
 from typing import Optional
 
 from server.services.parser import parse_file
@@ -17,11 +18,16 @@ from server.services.vectorstore import (
     get_document_count,
     get_unique_document_count,
 )
+from server.services.web_scraper import scrape_website, chunk_web_content
 
 router = APIRouter()
 
 # Simple JSON file to store document metadata (dates, upload info)
 META_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "doc_metadata.json")
+
+
+class URLUploadRequest(BaseModel):
+    url: str
 
 
 def _load_meta():
@@ -169,5 +175,92 @@ async def get_stats():
         "total_documents": total_docs,
         "total_chunks": total_chunks,
         "type_counts": type_counts,
-        "supported_formats": "PDF, Excel, TXT, EML",
+        "supported_formats": "PDF, Excel, TXT, EML, Web URLs",
     }
+
+
+@router.post("/upload-url")
+async def upload_url(
+    req: URLUploadRequest,
+    x_api_key: Optional[str] = Header(None),
+):
+    """
+    Scrape a website URL and ingest its content into the vector store.
+    
+    API key is optional - uses .env configuration if not provided.
+    """
+    url = req.url.strip()
+    if not url:
+        raise HTTPException(status_code=400, detail="URL cannot be empty")
+    
+    # Scrape the website
+    print(f"\n🌐 Starting web scrape for: {url}")
+    scrape_result = scrape_website(url)
+    
+    if not scrape_result["success"]:
+        raise HTTPException(
+            status_code=400,
+            detail=scrape_result.get("error", "Failed to scrape website")
+        )
+    
+    # Check if we got content
+    if not scrape_result["text"] or len(scrape_result["text"]) < 100:
+        raise HTTPException(
+            status_code=400,
+            detail="Insufficient content extracted from website. The page may be empty or blocked."
+        )
+    
+    # Chunk the content
+    try:
+        chunks = chunk_web_content(
+            scrape_result["text"],
+            scrape_result["title"],
+            scrape_result["url"]
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to chunk content: {str(e)}")
+    
+    if not chunks:
+        raise HTTPException(status_code=400, detail="No content could be extracted from the website")
+    
+    # Generate embeddings
+    try:
+        texts = [c["text"] for c in chunks]
+        embeddings, provider_used = embed_texts(texts, x_api_key)
+        print(f"📊 Embeddings generated using: {provider_used}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Embedding failed: {str(e)}")
+    
+    # Store in ChromaDB
+    doc_id = f"web_{uuid.uuid4().hex[:12]}"
+    try:
+        chunk_count = add_documents(doc_id, chunks, embeddings)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Vector store error: {str(e)}")
+    
+    # Save metadata
+    meta = _load_meta()
+    meta[doc_id] = {
+        "filename": scrape_result["title"],
+        "source_type": "web",
+        "url": scrape_result["url"],
+        "domain": scrape_result["domain"],
+        "upload_date": datetime.now().isoformat(),
+        "chunk_count": chunk_count,
+        "word_count": scrape_result["word_count"],
+        "embedding_provider": provider_used,
+    }
+    _save_meta(meta)
+    
+    return {
+        "success": True,
+        "doc_id": doc_id,
+        "title": scrape_result["title"],
+        "url": scrape_result["url"],
+        "domain": scrape_result["domain"],
+        "chunks_created": chunk_count,
+        "word_count": scrape_result["word_count"],
+        "embedding_provider": provider_used,
+        "message": f"Successfully ingested '{scrape_result['title']}' — {chunk_count} chunks indexed from {scrape_result['domain']}.",
+    }
+

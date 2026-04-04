@@ -144,3 +144,36 @@ async def update_session(session_id: int, req: SessionUpdateRequest):
         return {"success": True}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to update session: {str(e)}")
+
+
+class ConflictReviewRequest(BaseModel):
+    question: str
+    conflicts: dict
+    timestamp: str
+    session_id: Optional[int] = None
+
+
+@router.post("/conflicts/flag-review")
+async def flag_conflict_for_review(req: ConflictReviewRequest):
+    """
+    Flag a conflict for admin review.
+    Stores the conflict details for manual verification.
+    """
+    try:
+        # TODO: Store in a dedicated admin_review table
+        # For now, just log it
+        print(f"\n🚩 CONFLICT FLAGGED FOR ADMIN REVIEW")
+        print(f"   Question: {req.question}")
+        print(f"   Timestamp: {req.timestamp}")
+        print(f"   Session ID: {req.session_id}")
+        print(f"   Conflicts: {req.conflicts}")
+        print(f"   Number of conflicting sources: {len(req.conflicts.get('conflicts', [{}])[0].get('sources', []))}")
+        
+        # Return success
+        return {
+            "success": True,
+            "message": "Conflict flagged for admin review",
+            "review_id": f"review_{req.timestamp}"
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to flag conflict: {str(e)}")

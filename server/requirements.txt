@@ -8,3 +8,7 @@ openpyxl
 python-dateutil
 requests
 python-dotenv
+watchdog
+httpx
+beautifulsoup4
+html2text

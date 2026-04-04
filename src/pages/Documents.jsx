@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { UploadCloud, File, FileSpreadsheet, Mail, CheckCircle, Trash2, Loader, AlertCircle } from 'lucide-react';
+import { UploadCloud, File, FileSpreadsheet, Mail, CheckCircle, Trash2, Loader, AlertCircle, Globe, Link as LinkIcon } from 'lucide-react';
 
 const Documents = () => {
   const [documents, setDocuments] = useState([]);
@@ -7,6 +7,8 @@ const Documents = () => {
   const [uploadProgress, setUploadProgress] = useState('');
   const [error, setError] = useState('');
   const [dragOver, setDragOver] = useState(false);
+  const [urlInput, setUrlInput] = useState('');
+  const [isScrapingUrl, setIsScrapingUrl] = useState(false);
 
   const fetchDocuments = useCallback(async () => {
     try {
@@ -78,13 +80,50 @@ const Documents = () => {
   const getIcon = (type) => {
     if (type === 'pdf') return File;
     if (type === 'xlsx' || type === 'xls' || type === 'excel') return FileSpreadsheet;
+    if (type === 'web') return Globe;
     return Mail;
   };
 
   const getColor = (type) => {
     if (type === 'pdf') return '#ef4444';
     if (type === 'xlsx' || type === 'xls' || type === 'excel') return '#10b981';
+    if (type === 'web') return '#8b5cf6';
     return '#3b82f6';
+  };
+
+  const handleUrlUpload = async (e) => {
+    e.preventDefault();
+    if (!urlInput.trim() || isScrapingUrl) return;
+
+    setError('');
+    setIsScrapingUrl(true);
+    setUploadProgress(`Scraping website: ${urlInput}... Extracting content → Embedding → Indexing`);
+
+    try {
+      const res = await fetch('/api/upload-url', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: urlInput }),
+      });
+
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData.detail || 'URL upload failed');
+      }
+
+      const data = await res.json();
+      setUploadProgress(`✓ ${data.message}`);
+      setUrlInput('');
+      setTimeout(() => {
+        setUploadProgress('');
+        fetchDocuments();
+      }, 2000);
+    } catch (err) {
+      setError(`Failed to scrape URL: ${err.message}`);
+      setUploadProgress('');
+    }
+
+    setIsScrapingUrl(false);
   };
 
   return (
@@ -133,6 +172,95 @@ const Documents = () => {
             <h3 style={{ marginBottom: '8px' }}>Drag & Drop documents here, or click to browse</h3>
             <p style={{ color: 'var(--text-muted)' }}>Supports PDF, Excel (.xlsx), plain text (.txt), and email (.eml) files.</p>
           </>
+        )}
+      </div>
+
+      {/* URL Upload Section */}
+      <div className="glass-panel" style={{ padding: '32px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+          <div style={{ 
+            padding: '10px', 
+            backgroundColor: '#f3e8ff', 
+            borderRadius: '8px', 
+            color: '#8b5cf6' 
+          }}>
+            <Globe size={24} />
+          </div>
+          <div>
+            <h3 style={{ margin: 0, marginBottom: '4px' }}>Ingest from Website</h3>
+            <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+              Enter a URL to scrape and index website content
+            </p>
+          </div>
+        </div>
+
+        <form onSubmit={handleUrlUpload} style={{ display: 'flex', gap: '12px' }}>
+          <div style={{ flex: 1, position: 'relative' }}>
+            <LinkIcon 
+              size={18} 
+              style={{ 
+                position: 'absolute', 
+                left: '14px', 
+                top: '50%', 
+                transform: 'translateY(-50%)',
+                color: 'var(--text-muted)'
+              }} 
+            />
+            <input
+              type="url"
+              value={urlInput}
+              onChange={(e) => setUrlInput(e.target.value)}
+              placeholder="https://example.com/article"
+              disabled={isScrapingUrl}
+              style={{
+                width: '100%',
+                padding: '12px 14px 12px 42px',
+                border: '1px solid var(--border-color)',
+                borderRadius: '8px',
+                fontSize: '0.9rem',
+                backgroundColor: 'var(--bg-primary)',
+              }}
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="btn-primary"
+            disabled={isScrapingUrl || !urlInput.trim()}
+            style={{
+              padding: '12px 24px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              minWidth: '140px',
+              justifyContent: 'center'
+            }}
+          >
+            {isScrapingUrl ? (
+              <>
+                <Loader size={18} style={{ animation: 'spin 1s linear infinite' }} />
+                Scraping...
+              </>
+            ) : (
+              <>
+                <Globe size={18} />
+                Ingest URL
+              </>
+            )}
+          </button>
+        </form>
+
+        {isScrapingUrl && uploadProgress && (
+          <div style={{ 
+            marginTop: '16px', 
+            padding: '12px', 
+            backgroundColor: '#f0f9ff', 
+            borderRadius: '8px',
+            fontSize: '0.85rem',
+            color: '#0369a1'
+          }}>
+            {uploadProgress}
+          </div>
         )}
       </div>
 

@@ -7,6 +7,7 @@ import Chat from './pages/Chat';
 import Documents from './pages/Documents';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
+import Analytics from './pages/Analytics';
 import PublicUpload from './pages/PublicUpload';
 
 function AppLayout() {
@@ -21,6 +22,7 @@ function AppLayout() {
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="chat" element={<Chat />} />
             <Route path="documents" element={<Documents />} />
+            <Route path="analytics" element={<Analytics />} />
             <Route path="reports" element={<Reports />} />
             <Route path="settings" element={<Settings />} />
           </Routes>

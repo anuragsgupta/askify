@@ -1,0 +1,152 @@
+# Copy-Paste Test Queries for Hackathon Demo
+
+# ============================================================================
+# QUERY 1: CONFLICT DETECTION (WOW Factor #1)
+# ============================================================================
+What is the current pricing for Acme Corp's Enterprise plan?
+
+# Expected: Shows conflict between $2,500 (old) and $3,200 (new)
+# Highlight: Conflict badge, date prioritization, transparent reasoning
+
+
+# ============================================================================
+# QUERY 2: MULTI-SOURCE SYNTHESIS (WOW Factor #2)
+# ============================================================================
+Compare the pricing, refund policy, and support terms for Acme Corp across all available documents
+
+# Expected: Pulls from 6+ sources (emails, Excel, text)
+# Highlight: Cross-document reasoning, multiple conflicts, structured output
+
+
+# ============================================================================
+# QUERY 3: EXCEL INTELLIGENCE (WOW Factor #3)
+# ============================================================================
+What are the support ticket statistics and which clients have the most issues?
+
+# Expected: Reads Excel, calculates stats, identifies patterns
+# Highlight: Spreadsheet parsing, data analysis, sheet citations
+
+
+# ============================================================================
+# QUERY 4: FEATURE COMPARISON (WOW Factor #4)
+# ============================================================================
+What features are available in the Enterprise plan that aren't in Standard?
+
+# Expected: Comparative analysis from feature matrix
+# Highlight: Matrix parsing, logical inference, structured list
+
+
+# ============================================================================
+# QUERY 5: TEMPORAL REASONING (WOW Factor #5)
+# ============================================================================
+How has Acme Corp's refund policy changed over time?
+
+# Expected: Timeline of changes with dates
+# Highlight: Temporal understanding, change detection, historical analysis
+
+
+# ============================================================================
+# QUERY 6: CROSS-CLIENT ANALYSIS (WOW Factor #6)
+# ============================================================================
+Which client has the best pricing and terms, and why?
+
+# Expected: Multi-entity comparison with recommendations
+# Highlight: Value judgment, reasoning explanation, holistic analysis
+
+
+# ============================================================================
+# QUERY 7: HALLUCINATION CHECK (WOW Factor #7)
+# ============================================================================
+What is the cancellation policy for monthly subscriptions?
+
+# Expected: Honest "I don't know" with suggestions
+# Highlight: No hallucination, transparency, helpful alternatives
+
+
+# ============================================================================
+# BONUS QUERIES (If time permits)
+# ============================================================================
+
+# Complex Aggregation
+What is the total monthly recurring revenue across all active clients?
+
+# Trend Analysis
+Which support issues are most common and how quickly are they resolved?
+
+# Compliance Check
+Are all refund policies compliant with the 60-day standard?
+
+# Product Intelligence
+What's the difference between Premium and Enterprise plans?
+
+# Client-Specific Deep Dive
+Tell me everything about TechStart Inc - pricing, support history, and current status
+
+# Data Quality Check
+Which clients have incomplete information in the system?
+
+
+# ============================================================================
+# SIMPLE WARM-UP QUERIES (Start with these)
+# ============================================================================
+
+# Basic retrieval
+What is Acme Corp?
+
+# List query
+Show me all clients in the system
+
+# Document inventory
+What documents do you have about Acme Corp?
+
+
+# ============================================================================
+# IMPRESSIVE COMPLEX QUERIES (For advanced demo)
+# ============================================================================
+
+# Multi-dimensional analysis
+Compare all clients by pricing, refund policy, support level, and user licenses, then recommend the best value
+
+# Temporal + Cross-document
+How have pricing and refund policies evolved across all clients from November 2023 to January 2024?
+
+# Business intelligence
+Based on support tickets and pricing, which client is most likely to churn and why?
+
+# Compliance audit
+Review all refund policies and identify any that don't meet the 60-day, 100% refund standard
+
+# ROI calculation
+Calculate the annual cost difference between Standard and Enterprise plans for a company with 50 users
+
+
+# ============================================================================
+# NOTES FOR DEMO
+# ============================================================================
+
+# Best order for 10-minute demo:
+# 1. Warm-up (30 sec)
+# 2. Conflict Detection (2 min) ← WOW moment
+# 3. Multi-Source Synthesis (2 min)
+# 4. Excel Intelligence (2 min)
+# 5. Analytics Dashboard (2 min)
+# 6. CRM Integration (1 min)
+# 7. Q&A (remaining time)
+
+# Key phrases to say:
+# - "Notice the automatic conflict detection"
+# - "It's synthesizing across multiple document types"
+# - "Watch how it reads structured Excel data"
+# - "All tracked in real-time analytics"
+# - "One-click CRM integration"
+
+# Metrics to emphasize:
+# - 75-80% relevance score
+# - < 2 second response time
+# - < 10% hallucination rate
+# - 100% citation coverage
+# - 4+ document formats
+
+# ============================================================================
+# END OF TEST QUERIES
+# ============================================================================
