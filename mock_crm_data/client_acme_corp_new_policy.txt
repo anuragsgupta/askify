@@ -1,0 +1,108 @@
+COMPANY INC. - ENTERPRISE PRICING POLICY
+Updated: January 15, 2024
+Effective Date: January 1, 2024
+Document Version: 2.0
+
+=================================================================
+OFFICIAL ENTERPRISE PLAN PRICING - 2024
+=================================================================
+
+This document supersedes all previous pricing communications.
+
+CLIENT: Acme Corporation
+Account ID: ACME-ENT-2024-001
+Account Manager: Sarah Johnson
+
+-------------------------------------------------------------------
+CURRENT PRICING STRUCTURE (Effective January 1, 2024)
+-------------------------------------------------------------------
+
+MONTHLY SUBSCRIPTION:
+- Base Price: $3,200/month (increased from $2,500)
+- Reason for increase: Enhanced features, 24/7 support, advanced analytics
+
+ANNUAL DISCOUNT:
+- Discount Rate: 20% off annual subscription (increased from 15%)
+- Annual Price: $30,720 (saves $7,680/year)
+- Payment Terms: Net 30
+
+SETUP & ONBOARDING:
+- Setup Fee: WAIVED for 2024 (previously $1,000)
+- Onboarding Training: Included (4 hours, valued at $2,000)
+- Dedicated Account Manager: Included
+
+USER LICENSING:
+- Included Users: 75 users (increased from 50)
+- Additional Users: $20/user/month (reduced from $25)
+- Bulk User Discount: 10% off for 100+ users
+
+SUPPORT LEVEL:
+- Premium Support: 24/7 phone, email, and chat
+- Response Time: < 2 hours for critical issues
+- Dedicated Support Engineer: Included
+- Quarterly Business Reviews: Included
+
+-------------------------------------------------------------------
+UPDATED REFUND POLICY (Effective January 1, 2024)
+-------------------------------------------------------------------
+
+MONEY-BACK GUARANTEE:
+- Duration: 60 days (extended from 30 days)
+- Refund Amount: 100% of subscription fee (increased from 50%)
+- Processing Time: 5-7 business days (improved from 10-15 days)
+- No questions asked policy
+
+CANCELLATION TERMS:
+- Minimum Commitment: 12 months (unchanged)
+- Cancellation Fee: WAIVED (previously $500)
+- Notice Period: 30 days before renewal (unchanged)
+- Auto-Renewal: Optional (previously mandatory)
+
+-------------------------------------------------------------------
+ADDITIONAL BENEFITS (New for 2024)
+-------------------------------------------------------------------
+
+- API Access: Unlimited API calls (previously limited)
+- Data Storage: 500GB included (previously 100GB)
+- Custom Integrations: 2 custom integrations included
+- Priority Feature Requests: Quarterly roadmap input
+- White-Label Options: Available at no extra cost
+
+-------------------------------------------------------------------
+SPECIAL PROMOTION (Q1 2024)
+-------------------------------------------------------------------
+
+For contracts signed before March 31, 2024:
+- First 3 months: 25% discount
+- Free migration from competitor platforms
+- Extended trial: 90 days (instead of standard 60 days)
+
+-------------------------------------------------------------------
+CONTACT INFORMATION
+-------------------------------------------------------------------
+
+For questions about this pricing policy:
+- Account Manager: Sarah Johnson (sarah.johnson@company.com)
+- Sales Director: Michael Chen (michael.chen@company.com)
+- Phone: (555) 123-4567
+- Support: support@company.com
+
+-------------------------------------------------------------------
+LEGAL NOTES
+-------------------------------------------------------------------
+
+This pricing policy is confidential and intended solely for Acme Corporation. 
+Prices are subject to change with 60 days written notice. All prices are in USD.
+Taxes and regulatory fees may apply based on jurisdiction.
+
+Document Approved By:
+- Michael Chen, VP of Sales
+- Jennifer Martinez, CFO
+- Robert Taylor, CEO
+
+Last Updated: January 15, 2024
+Next Review Date: July 1, 2024
+
+=================================================================
+END OF DOCUMENT
+=================================================================

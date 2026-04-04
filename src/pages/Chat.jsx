@@ -166,6 +166,15 @@ const Chat = () => {
     return '#3b82f6';
   };
 
+  const formatConflictValues = (valueString) => {
+    // Split by comma and wrap each value in a span
+    if (!valueString) return null;
+    const values = valueString.split(',').map(v => v.trim()).filter(v => v);
+    return values.map((val, idx) => (
+      <span key={idx} className="conflict-val-item">{val}</span>
+    ));
+  };
+
   const conflict = lastResponse?.conflict_analysis || null;
   const sources = lastResponse?.sources || [];
 
@@ -262,6 +271,28 @@ const Chat = () => {
             <div key={i} className={`chat-bubble-container ${msg.sender}`}>
               <div className={`chat-bubble ${msg.sender}`}>
                 {msg.text}
+                
+                {/* Show inline conflict warning for AI messages */}
+                {msg.sender === 'ai' && lastResponse && lastResponse.conflict_analysis?.has_conflicts && i === messages.length - 1 && (
+                  <div className="conflict-warning">
+                    <div className="conflict-warning-title">
+                      ⚠️ Conflict Detected: Multiple Sources with Different Information
+                    </div>
+                    <div className="conflict-warning-content">
+                      {lastResponse.conflict_analysis.conflicts[0]?.sources?.map((src, idx) => (
+                        <div key={idx} className="conflict-source-inline">
+                          <span className="conflict-source-label">Source {idx + 1}:</span>
+                          <span>{src.source}</span>
+                          <span style={{ color: '#dc2626', fontWeight: 600 }}>({src.value})</span>
+                          <span style={{ color: '#78350f' }}>{src.date || 'No date'}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="conflict-resolution-inline">
+                      <strong>Resolution:</strong> {lastResponse.conflict_analysis.conflicts[0]?.resolution?.reason}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -314,7 +345,9 @@ const Chat = () => {
                         </div>
                         <span>{src.source}</span>
                       </div>
-                      <div className="conflict-val" style={{ color: '#ef4444', backgroundColor: 'var(--error-bg)' }}>{src.value}</div>
+                      <div className="conflict-val">
+                        {formatConflictValues(src.value)}
+                      </div>
                       <div className="conflict-date">{src.date || '—'}</div>
                     </div>
                   );

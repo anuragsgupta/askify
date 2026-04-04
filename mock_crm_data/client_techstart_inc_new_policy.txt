@@ -1,0 +1,199 @@
+COMPANY INC. - REFUND POLICY UPDATE
+Document Date: January 20, 2024
+Effective Date: January 1, 2024
+Policy Version: 3.0
+
+=================================================================
+UPDATED REFUND POLICY - ALL ENTERPRISE CLIENTS
+=================================================================
+
+This policy supersedes all previous refund communications and applies 
+to all Enterprise Plan customers effective January 1, 2024.
+
+-------------------------------------------------------------------
+ENHANCED MONEY-BACK GUARANTEE
+-------------------------------------------------------------------
+
+ELIGIBILITY PERIOD:
+- Extended to 60 days (previously 30 days)
+- Calculated from initial purchase date
+- No usage restrictions (previously limited to <10 users)
+
+REFUND AMOUNT:
+- 100% FULL REFUND (increased from 50%)
+- Includes all subscription fees paid
+- Includes setup fees (previously non-refundable)
+- Includes any add-on purchases
+
+PROCESSING TIME:
+- 5-7 business days (improved from 10-15 days)
+- Automatic processing (no manual approval needed)
+- Email confirmation sent within 24 hours
+
+NO QUESTIONS ASKED:
+- No reason required for refund request
+- No usage data review
+- No exit interview required
+- Simplified one-click refund process
+
+-------------------------------------------------------------------
+WHAT HAPPENS AFTER REFUND
+-------------------------------------------------------------------
+
+ACCOUNT STATUS:
+- Account remains active for 30 days after refund
+- All features remain accessible during transition period
+- Data export tools available for 90 days
+- Option to reactivate within 90 days without setup fee
+
+DATA RETENTION:
+- All data retained for 90 days (previously 90 days)
+- Extended to 180 days upon request
+- Secure deletion after retention period
+- Compliance with GDPR and data protection laws
+
+REACTIVATION OPTIONS:
+- No penalty for reactivation within 90 days
+- Setup fee waived for returning customers
+- Previous configuration restored automatically
+- Special "welcome back" discount: 20% off first 3 months
+
+-------------------------------------------------------------------
+SPECIAL CASES
+-------------------------------------------------------------------
+
+PARTIAL REFUNDS:
+- Available for annual subscriptions
+- Prorated based on unused months
+- Minimum refund: 3 months remaining
+
+TECHNICAL ISSUES:
+- Full refund if service unavailable >24 hours
+- Automatic credit for downtime >4 hours
+- No questions asked, automatic processing
+
+DISSATISFACTION:
+- Full refund regardless of usage
+- Optional feedback survey (not required)
+- Priority support for transition assistance
+
+-------------------------------------------------------------------
+COMPARISON: OLD VS NEW POLICY
+-------------------------------------------------------------------
+
+REFUND PERIOD:
+- Old: 30 days
+- New: 60 days
+- Change: +100% more time
+
+REFUND AMOUNT:
+- Old: 50% of subscription
+- New: 100% full refund
+- Change: +100% more money back
+
+PROCESSING TIME:
+- Old: 10-15 business days
+- New: 5-7 business days
+- Change: 50% faster
+
+SETUP FEE:
+- Old: Non-refundable
+- New: Fully refundable
+- Change: $1,000 additional refund
+
+USER RESTRICTIONS:
+- Old: <10 users only
+- New: No restrictions
+- Change: Available to all customers
+
+-------------------------------------------------------------------
+WHY WE MADE THESE CHANGES
+-------------------------------------------------------------------
+
+Customer Feedback:
+- 78% of customers requested longer refund period
+- 65% felt 50% refund was insufficient
+- 82% wanted faster processing
+
+Competitive Analysis:
+- Industry standard is 60-day, 100% refund
+- Our old policy was below market standard
+- New policy positions us as industry leader
+
+Business Impact:
+- Reduced refund requests by 40% (more confidence)
+- Increased trial-to-paid conversion by 35%
+- Improved customer satisfaction scores by 50%
+- Enhanced brand reputation and trust
+
+-------------------------------------------------------------------
+HOW TO REQUEST A REFUND
+-------------------------------------------------------------------
+
+ONLINE PORTAL:
+1. Log into your account dashboard
+2. Navigate to Billing > Refund Request
+3. Click "Request Full Refund" button
+4. Receive confirmation email within 24 hours
+5. Refund processed within 5-7 business days
+
+EMAIL REQUEST:
+- Send email to: refunds@company.com
+- Subject: "Refund Request - [Account ID]"
+- Include: Account email and reason (optional)
+- Response within 24 hours
+
+PHONE REQUEST:
+- Call: (555) 123-4567
+- Available: 24/7 (previously 9-5 only)
+- Immediate processing
+- Confirmation email sent
+
+-------------------------------------------------------------------
+LEGAL COMPLIANCE
+-------------------------------------------------------------------
+
+This refund policy complies with:
+- Federal Trade Commission (FTC) regulations
+- State consumer protection laws
+- International consumer rights directives
+- Payment Card Industry (PCI) standards
+
+Customers have additional rights under applicable consumer protection 
+laws that may not be limited by this policy.
+
+-------------------------------------------------------------------
+CONTACT INFORMATION
+-------------------------------------------------------------------
+
+Refund Questions:
+- Email: refunds@company.com
+- Phone: (555) 123-4567 (24/7)
+- Live Chat: Available on website
+
+Billing Department:
+- Jennifer Martinez, Billing Manager
+- Email: billing@company.com
+- Phone: (555) 123-4567 ext. 201
+
+Customer Success:
+- For retention discussions before refund
+- Email: success@company.com
+- We'd love to help resolve any issues first!
+
+-------------------------------------------------------------------
+DOCUMENT APPROVAL
+-------------------------------------------------------------------
+
+Approved By:
+- Jennifer Martinez, CFO
+- Robert Taylor, CEO
+- Legal Department
+
+Effective Date: January 1, 2024
+Next Review: July 1, 2024
+Version: 3.0
+
+=================================================================
+END OF REFUND POLICY
+=================================================================

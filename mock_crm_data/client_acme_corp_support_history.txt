@@ -1,0 +1,127 @@
+ACME CORPORATION - SUPPORT TICKET HISTORY
+Account ID: ACME-ENT-2024-001
+Last Updated: February 10, 2024
+
+=================================================================
+RECENT SUPPORT TICKETS
+=================================================================
+
+-------------------------------------------------------------------
+TICKET #2024-0245 - RESOLVED
+-------------------------------------------------------------------
+Date Opened: February 8, 2024
+Date Closed: February 9, 2024
+Priority: High
+Category: Billing Inquiry
+
+ISSUE:
+Client contacted support regarding confusion about pricing. They received 
+an old email from November 2023 quoting $2,500/month but saw $3,200/month 
+on their recent invoice.
+
+RESOLUTION:
+Explained that pricing was updated effective January 1, 2024. New pricing 
+is $3,200/month but includes significant additional value:
+- 24/7 premium support (vs 9-5 standard)
+- 75 users included (vs 50)
+- No setup fee (saves $1,000)
+- 60-day refund period (vs 30-day)
+- 100% refund (vs 50%)
+
+Client was satisfied with explanation and appreciated the enhanced features.
+
+RESOLUTION TIME: 1 day
+CUSTOMER SATISFACTION: 5/5 stars
+
+-------------------------------------------------------------------
+TICKET #2024-0198 - RESOLVED
+-------------------------------------------------------------------
+Date Opened: January 22, 2024
+Date Closed: January 22, 2024
+Priority: Medium
+Category: Feature Request
+
+ISSUE:
+Client requested API access for custom integration with their internal 
+CRM system.
+
+RESOLUTION:
+Confirmed that unlimited API access is included in the 2024 Enterprise 
+Plan at no additional cost. Provided API documentation and developer 
+sandbox access. Scheduled onboarding call with technical team.
+
+RESOLUTION TIME: 4 hours
+CUSTOMER SATISFACTION: 5/5 stars
+
+-------------------------------------------------------------------
+TICKET #2024-0156 - RESOLVED
+-------------------------------------------------------------------
+Date Opened: January 15, 2024
+Date Closed: January 16, 2024
+Priority: Low
+Category: Account Setup
+
+ISSUE:
+Client needed assistance with user provisioning and role assignments.
+
+RESOLUTION:
+Dedicated account manager (Sarah Johnson) provided personalized training 
+session. Set up 45 user accounts with appropriate role-based access 
+controls. Configured SSO integration with client's Active Directory.
+
+RESOLUTION TIME: 1 day
+CUSTOMER SATISFACTION: 5/5 stars
+
+-------------------------------------------------------------------
+TICKET #2023-1876 - RESOLVED
+-------------------------------------------------------------------
+Date Opened: December 10, 2023
+Date Closed: December 12, 2023
+Priority: Medium
+Category: Contract Renewal
+
+ISSUE:
+Client inquired about early renewal to lock in 2023 pricing before 
+anticipated 2024 price increase.
+
+RESOLUTION:
+Offered early renewal option but recommended waiting for 2024 pricing 
+due to significantly enhanced value proposition. Explained upcoming 
+improvements:
+- Better refund policy
+- More included users
+- Waived setup and cancellation fees
+- 24/7 support upgrade
+
+Client agreed to wait and was pleased with the recommendation.
+
+RESOLUTION TIME: 2 days
+CUSTOMER SATISFACTION: 5/5 stars
+
+=================================================================
+ACCOUNT HEALTH METRICS
+=================================================================
+
+Overall Satisfaction Score: 5.0/5.0
+Average Resolution Time: 1.5 days
+Total Tickets (Last 90 Days): 8
+Open Tickets: 0
+Escalated Tickets: 0
+
+Account Status: HEALTHY
+Renewal Probability: 95%
+Upsell Opportunity: High (considering Premium+ tier)
+
+=================================================================
+NOTES FOR SUPPORT TEAM
+=================================================================
+
+- Client is very satisfied with service
+- Appreciates transparent communication about pricing changes
+- Values the enhanced features in 2024 plan
+- Good candidate for Premium+ tier upgrade
+- Schedule quarterly business review in March 2024
+
+=================================================================
+END OF SUPPORT HISTORY
+=================================================================

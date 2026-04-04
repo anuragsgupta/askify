@@ -1,102 +1,106 @@
 {
-  "doc_d22d03ae0a23": {
-    "filename": "IGNISIA_26_Twists.pdf",
-    "source_type": "pdf",
-    "upload_date": "2026-04-04T03:30:35.658276",
-    "chunk_count": 40,
-    "file_size": 210792
-  },
-  "doc_7497d218b440": {
-    "filename": "Ignisia Problem Statements.pdf",
-    "source_type": "pdf",
-    "upload_date": "2026-04-04T03:30:57.196769",
-    "chunk_count": 129,
-    "file_size": 518152
-  },
-  "doc_a122043e344f": {
-    "filename": "Swati Singh.pdf",
-    "source_type": "pdf",
-    "upload_date": "2026-04-04T03:47:53.573129",
-    "chunk_count": 13,
-    "file_size": 152831
-  },
-  "doc_85665beff350": {
-    "filename": "DSA_2022.txt",
+  "doc_8894616fe91d": {
+    "filename": "client_acme_corp_new_policy.txt",
     "source_type": "text",
-    "upload_date": "2026-04-04T03:48:05.260798",
-    "chunk_count": 64,
-    "file_size": 25533
-  },
-  "doc_2518e8fba872": {
-    "filename": "Ayush_Kumar.pdf",
-    "source_type": "pdf",
-    "upload_date": "2026-04-04T04:34:55.143789",
+    "upload_date": "2026-04-04T09:08:22.805784",
     "chunk_count": 1,
-    "file_size": 211027,
+    "file_size": 3900,
     "embedding_provider": "ollama"
   },
-  "doc_07b7238d4084": {
-    "filename": "email_1_project_update.eml",
+  "doc_37670dfd36c4": {
+    "filename": "client_techstart_inc_new_policy.txt",
     "source_type": "text",
-    "upload_date": "2026-04-04T07:36:57.701894",
-    "chunk_count": 1,
-    "file_size": 972,
+    "upload_date": "2026-04-04T09:08:23.942683",
+    "chunk_count": 2,
+    "file_size": 6021,
     "embedding_provider": "ollama"
   },
-  "doc_ac0d6b9dccae": {
+  "doc_b44b94a50ad2": {
+    "filename": "client_techstart_inc_old_quote.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T09:08:24.085553",
+    "chunk_count": 1,
+    "file_size": 1693,
+    "embedding_provider": "ollama"
+  },
+  "doc_7900875914f0": {
+    "filename": "client_acme_corp_support_history.txt",
+    "source_type": "text",
+    "upload_date": "2026-04-04T09:08:24.819001",
+    "chunk_count": 1,
+    "file_size": 4138,
+    "embedding_provider": "ollama"
+  },
+  "doc_1337169d0211": {
+    "filename": "client_acme_corp_old_email.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T09:08:24.922369",
+    "chunk_count": 1,
+    "file_size": 1069,
+    "embedding_provider": "ollama"
+  },
+  "doc_25a8fe886217": {
     "filename": "email_8_training_invitation.eml",
     "source_type": "text",
-    "upload_date": "2026-04-04T07:36:57.911848",
+    "upload_date": "2026-04-04T09:08:44.599006",
     "chunk_count": 1,
     "file_size": 3595,
     "embedding_provider": "ollama"
   },
-  "doc_18b6e8cfe529": {
+  "doc_9d3c02aaa0b1": {
     "filename": "email_7_security_alert.eml",
     "source_type": "text",
-    "upload_date": "2026-04-04T07:36:58.148599",
+    "upload_date": "2026-04-04T09:08:44.815851",
     "chunk_count": 1,
     "file_size": 2810,
     "embedding_provider": "ollama"
   },
-  "doc_d31f55e43df4": {
+  "doc_90698a84f4e6": {
     "filename": "email_6_sales_proposal.eml",
     "source_type": "text",
-    "upload_date": "2026-04-04T07:36:58.368501",
+    "upload_date": "2026-04-04T09:08:45.022863",
     "chunk_count": 1,
     "file_size": 2514,
     "embedding_provider": "ollama"
   },
-  "doc_5f057643eaf3": {
+  "doc_12603b65103d": {
     "filename": "email_5_hr_announcement.eml",
     "source_type": "text",
-    "upload_date": "2026-04-04T07:36:58.490170",
+    "upload_date": "2026-04-04T09:08:45.161648",
     "chunk_count": 1,
     "file_size": 1884,
     "embedding_provider": "ollama"
   },
-  "doc_1e9f99616a06": {
+  "doc_6b07af1e34ab": {
     "filename": "email_4_meeting_notes.eml",
     "source_type": "text",
-    "upload_date": "2026-04-04T07:36:58.624150",
+    "upload_date": "2026-04-04T09:08:45.296353",
     "chunk_count": 1,
     "file_size": 1807,
     "embedding_provider": "ollama"
   },
-  "doc_f667a938724c": {
+  "doc_beed017b30e9": {
     "filename": "email_3_bug_report.eml",
     "source_type": "text",
-    "upload_date": "2026-04-04T07:36:58.742202",
+    "upload_date": "2026-04-04T09:08:45.433942",
     "chunk_count": 1,
     "file_size": 1434,
     "embedding_provider": "ollama"
   },
-  "doc_03a734437f66": {
+  "doc_e64ecff95ec6": {
     "filename": "email_2_customer_inquiry.eml",
     "source_type": "text",
-    "upload_date": "2026-04-04T07:36:58.842826",
+    "upload_date": "2026-04-04T09:08:45.548589",
     "chunk_count": 1,
     "file_size": 1139,
+    "embedding_provider": "ollama"
+  },
+  "doc_aa2a79f22586": {
+    "filename": "email_1_project_update.eml",
+    "source_type": "text",
+    "upload_date": "2026-04-04T09:08:45.638892",
+    "chunk_count": 1,
+    "file_size": 972,
     "embedding_provider": "ollama"
   }
 }
